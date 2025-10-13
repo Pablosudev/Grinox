@@ -24,6 +24,7 @@ export default function Layout() {
         <StyledLink href="/montaje"><TitleDrop>MONTAJE</TitleDrop></StyledLink>
         <StyledLink href="/mantenimiento"><TitleDrop>MANTENIMIENTO</TitleDrop></StyledLink>
         <StyledLink href="/servicios"><TitleDrop>SERVICIOS</TitleDrop></StyledLink>
+        <StyledLink href="/contacto"><TitleDrop>CONTACTO</TitleDrop></StyledLink>
       </MenuDrop>
       <Outlet />
       <Footer>
