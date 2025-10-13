@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import SliderMachine from "./Components/SliderMachine";
+import SliderContainer from "./Components/SliderContainer";
 
 export default function Service() {
   return (
@@ -20,17 +22,34 @@ export default function Service() {
           <Logo src="img/Logos/Screw.png" />
           <DataTitle>MANTENIMIENTO</DataTitle>
         </ContainerLogo>
-        <GearR src="img/Imgs/GearR.png"/>
-        <GearL src="img/Imgs/GearL.png"/>
-        <GearRBottom src="img/Imgs/GearR.png"/>
+        <GearR src="img/Imgs/GearR.png" />
+        <GearL src="img/Imgs/GearL.png" />
+        <GearRBottom src="img/Imgs/GearR.png" />
         <ContainerLogoFlex>
-            <Arrow src="img/Logos/ArrowL.png"/>
-            <Cross src="img/Logos/WrenchCross.png"/>
-            <Arrow src="img/Logos/ArrowR.png"/>
+          <Arrow src="img/Logos/ArrowL.png" />
+          <Cross src="img/Logos/WrenchCross.png" />
+          <Arrow src="img/Logos/ArrowR.png" />
         </ContainerLogoFlex>
       </ContainerLogosColumn>
       <div>
-        <h1>FABRICACIONES</h1>
+        <DataTitle>FABRICACIONES</DataTitle>
+        <ContainerProduct>
+          <ContainerProductFlex>
+            <TitleProduct>Carro para transporte de sustancias químicas</TitleProduct>
+            <Product src="img/Imgs/Carro.png" alt="" />
+          </ContainerProductFlex>
+          <DataProduct>
+            Para garantizar siempre la seguridad de nuestros trabajadores
+            contamos con nuestro carro de trasporte, pensado y diseñado con
+            materiales muy resistentes que hacen de esta tarea algo sencillo,
+            permitiendonos manipular los productos químicos de la empresa Masul,
+            nuestra empresa colaboradora, con gran facilidad.
+          </DataProduct>
+        </ContainerProduct>
+        <TitleMachine>MAQUINARIA PARA ALMAZARAS</TitleMachine>
+        <SliderMachine/>
+        <TitleMachine>DEPÓSITOS</TitleMachine>
+        <SliderContainer/>
       </div>
     </>
   );
@@ -74,7 +93,7 @@ const GearR = styled.img`
 const GearRBottom = styled.img`
   position: absolute;
   right: 0%;
-  bottom: 4%;
+  bottom: 6%;
 `;
 const GearL = styled.img`
   position: absolute;
@@ -82,30 +101,72 @@ const GearL = styled.img`
   left: 0%;
 `;
 const Logo = styled.img`
-    object-fit: contain;
-    width:7rem;
+  object-fit: contain;
+  width: 7rem;
 `;
 const ContainerLogo = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
 `;
 const DataTitle = styled.h1`
-    font-weight: 400;
-    font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
 `;
 const ContainerLogoFlex = styled.div`
-    display: flex;
-    margin-top: 6%;
-
+  display: flex;
+  margin-top: 6%;
+  margin-bottom: 10%;
 `;
 const Arrow = styled.img`
-object-fit: contain;
-width: 4rem;
+  object-fit: contain;
+  width: 4rem;
 `;
 const Cross = styled.img`
-object-fit: contain;
-width: 6rem;
-z-index: 100;
+  object-fit: contain;
+  width: 6rem;
+  z-index: 100;
+`;
+const ContainerProductFlex = styled.div`
+ padding: 3%; 
+  margin: 5%;
+  display: flex;
+ width: 100%;
+`;
+const ContainerProduct = styled.div`
+background-color: white;
+  border-radius: 8px;
+  margin: 5%;
+  padding-bottom: 10%;
+`;
+const TitleProduct = styled.h1`
+  color:#447aab;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 13%;
+`;
+const Product = styled.img`
+  object-fit: contain;
+  width: 10rem;
+  transform: rotate(180deg);
+  margin-top: 5%;
+`;
+const DataProduct = styled.p`
+  color: black;
+  padding-left: 5%;
+  padding-right: 5%;
+`;
+const TitleMachine = styled.h1`
+  color:white;
+  font-size: 1.7rem;
+  font-weight:400;
+  text-align: center;
+  margin-top: 15%;
+`;
+const ContainerMachine = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  margin: 5%;
 `;

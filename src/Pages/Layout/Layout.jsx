@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdOutlineMenu } from "react-icons/md";
 import { useState } from "react";
@@ -11,16 +11,19 @@ export default function Layout() {
   return (
     <>
       <Navbar>
+        <Link to="/">
         <img src="img/Logos/Grinox.png" alt="LogoGrinox" />
+        </Link>
+        
         <ButtonMenu onClick={() => setIsOpen(true)}>
           <LogoMenu />
         </ButtonMenu>
       </Navbar>
       {isOpen && <Overlay onClick={closeMenu} />}
       <MenuDrop id="menu-drop" $open={isOpen}>
-        <Link href="/montaje"><TitleDrop>MONTAJE</TitleDrop></Link>
-        <Link href="/mantenimiento"><TitleDrop>MANTENIMIENTO</TitleDrop></Link>
-        <Link href="/servicios"><TitleDrop>SERVICIOS</TitleDrop></Link>
+        <StyledLink href="/montaje"><TitleDrop>MONTAJE</TitleDrop></StyledLink>
+        <StyledLink href="/mantenimiento"><TitleDrop>MANTENIMIENTO</TitleDrop></StyledLink>
+        <StyledLink href="/servicios"><TitleDrop>SERVICIOS</TitleDrop></StyledLink>
       </MenuDrop>
       <Outlet />
       <Footer>
@@ -131,7 +134,7 @@ const TitleDrop = styled.h1`
   text-align: center;
   margin-top:4%;
 `;
-const Link = styled.a`
+const StyledLink = styled.a`
   text-decoration: none; 
   color: inherit;        
   cursor: pointer;
