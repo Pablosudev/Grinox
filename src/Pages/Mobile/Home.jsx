@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import SliderWorks from "./Components/SliderWorks";
+import SliderWorks from "../Components/SliderWorks";
 
 export default function Home() {
   return (
-    <>
+    <ContainerHome>
       <ImgBackground src="img/Backgrounds/Tuberias.png" alt="" />
       <Container>
         <Title>¿QUIENES SOMOS?</Title>
@@ -52,9 +52,14 @@ export default function Home() {
       <Title>GALERÍA DE TRABAJOS</Title>
       <SliderWorks />
       
-    </>
+    </ContainerHome>
   );
 }
+const ContainerHome = styled.div`
+  @media screen and (min-width: 723px){
+    display: none;
+  }
+`;
 const Container = styled.div`
   padding-left: 5%;
   padding-right: 5%;

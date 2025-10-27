@@ -10,14 +10,32 @@ export default function Layout() {
 
   return (
     <>
+    <Layaout>
       <Navbar>
         <Link to="/">
-        <img src="img/Logos/Grinox.png" alt="LogoGrinox" />
+        <LogoGrinox src="img/Logos/Grinox.png" alt="LogoGrinox" />
         </Link>
         
         <ButtonMenu onClick={() => setIsOpen(true)}>
           <LogoMenu />
         </ButtonMenu>
+        <SecondNav>
+          <List>
+            <StyledLink>
+            INICIO
+            </StyledLink>
+            <StyledLink>
+            MANTENIMIENTO
+            </StyledLink>
+             <StyledLink>
+            SERVICIOS
+            </StyledLink>
+             <StyledLink>
+            CONTACTO
+            </StyledLink>
+            <GrinoxImg src="img/Logos/GR.png"/>
+          </List>
+        </SecondNav>
       </Navbar>
       {isOpen && <Overlay onClick={closeMenu} />}
       <MenuDrop id="menu-drop" $open={isOpen}>
@@ -46,10 +64,15 @@ export default function Layout() {
           (Córdoba)
         </UbiInfo>
       </Footer>
+    </Layaout>
+    
     </>
   );
 }
 
+
+const Layaout= styled.div`
+`;
 const Navbar = styled.div`
   background-color: #447aab;
   display: flex;
@@ -59,6 +82,30 @@ const Navbar = styled.div`
   padding-bottom: 3%;
   padding-left: 4%;
   padding-right: 5%;
+  @media screen and (min-width: 723px){
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+`;
+const SecondNav = styled.div`
+  display: none;
+  @media screen and (min-width: 723px){
+    background-color: #4B4545;
+    display: block;
+    position: absolute;
+    width: 70%;
+    right: 5%;
+    top: 2%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+  
+  }
+`;
+const LogoGrinox = styled.img`
+  @media screen and (min-width: 500px){
+    object-fit: contain;
+    width: 10rem;
+  }
 `;
 const LogoMenu = styled(MdOutlineMenu)`
   width: 1.2rem;
@@ -72,6 +119,9 @@ const ButtonMenu = styled.button`
   border: none;
   cursor: pointer;
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4);
+  @media screen and (min-width: 723px){
+    display: none;
+  }
 `;
 const Footer = styled.div`
   background-color: #447aab;
@@ -144,3 +194,17 @@ const StyledLink = styled.a`
     color: inherit;      
   }
   `;
+
+const List = styled.div`
+  
+  @media screen and (min-width: 723px){
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+`;
+const GrinoxImg = styled.img`
+    object-fit: contain;
+    width: 5rem;
+`;

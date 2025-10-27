@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import SliderMachine from "./Components/SliderMachine";
-import SliderContainer from "./Components/SliderContainer";
+import SliderMachine from "../Components/SliderMachine";
+import SliderContainer from "../Components/SliderContainer";
 
 export default function Service() {
   return (
