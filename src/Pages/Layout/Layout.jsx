@@ -2,6 +2,10 @@ import { Outlet, Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdOutlineMenu } from "react-icons/md";
 import { useState } from "react";
+import { HiMapPin } from "react-icons/hi2";
+import { IoIosMail } from "react-icons/io";
+import { FaPhoneAlt } from "react-icons/fa";
+
 
 
 export default function Layout() {
@@ -64,6 +68,21 @@ export default function Layout() {
           (Córdoba)
         </UbiInfo>
       </Footer>
+      <FooterDesk>
+        <FooterBack src="img/Backgrounds/olivo.png"/>
+        <TitleFooter>CONTACTA CON NOSOTROS, HEMOS REALIZADO <br /> INTERVENCIONES POR TODO EL MUNDO</TitleFooter>
+        <div>
+          <div>
+            <ul>
+              <li><PhoneLogo/>678574652/662543947</li>
+              <li><MailLogo/>grinoxindustrial@gmail.com</li>
+              <li><UbiLogo/>Polígono la Fuenblanquilla parecela 5-3-1 14650 Bujalance (Córdoba)</li>
+            </ul>
+          </div>
+
+          <img src=""  />
+        </div>
+      </FooterDesk>
     </Layaout>
     
     </>
@@ -133,6 +152,9 @@ const Footer = styled.div`
   padding-right: 15%;
   padding-bottom: 15%;
   padding-top: 10%;
+@media screen and (min-width: 723px){
+  display: none;  
+}
 `;
 
 const TitleFooter = styled.h1`
@@ -142,6 +164,9 @@ const TitleFooter = styled.h1`
   font-weight: 300;
   margin-top: 5%;
   margin-bottom: 8%;
+  @media screen and (min-width: 1024px){
+    font-size: 2.5rem;
+  }
 `;
 const ContainerPhone = styled.div`
   display: flex;
@@ -207,4 +232,29 @@ const List = styled.div`
 const GrinoxImg = styled.img`
     object-fit: contain;
     width: 5rem;
+`;
+
+const FooterDesk = styled.div`
+  display:none;
+   @media screen and (min-width: 723px){
+    display: block;
+    padding-top: 7%;
+   }
+`;
+const FooterBack = styled.img`
+  background-position: center; 
+  background-size: cover;   
+ 
+  min-width: 100%;
+  position: fixed;
+  object-fit: contain;
+`;
+const UbiLogo = styled(HiMapPin)`
+
+`;
+const MailLogo = styled(IoIosMail )`
+
+`;
+const PhoneLogo = styled(FaPhoneAlt)`
+
 `;
