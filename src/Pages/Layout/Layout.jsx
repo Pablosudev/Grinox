@@ -37,7 +37,7 @@ export default function Layout() {
              <StyledLink>
             CONTACTO
             </StyledLink>
-            <GrinoxImg src="img/Logos/GR.png"/>
+            {/* <GrinoxImg src="img/Logos/GR.png"/> */}
           </List>
         </SecondNav>
       </Navbar>
@@ -114,10 +114,10 @@ const SecondNav = styled.div`
     position: absolute;
     width: 70%;
     right: 5%;
-    top: 2%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-  
+    top: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    z-index: 1;
   }
 `;
 const LogoGrinox = styled.img`
@@ -212,7 +212,9 @@ const TitleDrop = styled.h1`
 `;
 const StyledLink = styled.a`
   text-decoration: none; 
-  color: inherit;        
+  color: inherit;     
+  font-size: 1.1rem;   
+  font-weight: 400;
   cursor: pointer;
 
   &:visited {
@@ -231,7 +233,8 @@ const List = styled.div`
 `;
 const GrinoxImg = styled.img`
     object-fit: contain;
-    width: 5rem;
+    width: 6rem;
+    opacity: 70%;
 `;
 
 const FooterDesk = styled.div`
