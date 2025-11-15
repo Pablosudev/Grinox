@@ -114,7 +114,7 @@ const SecondNav = styled.div`
     position: absolute;
     width: 70%;
     right: 5%;
-    top: 4%;
+    top: 6%;
     padding-top: 2%;
     padding-bottom: 2%;
     z-index: 1;
@@ -247,7 +247,6 @@ const FooterDesk = styled.div`
 const FooterBack = styled.img`
   background-position: center; 
   background-size: cover;   
- 
   min-width: 100%;
   position: fixed;
   object-fit: contain;

@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import SlideWorks from  "../Components/SliderWorks.jsx"
 
 export default function HomeDesktop() {
   return (
-    <>
+    <HomeDesk>
       <ContainerFirst>
         <ImgBackground src="img/Backgrounds/OlivosFondo.png" />
         <Polygon src="img/Logos/PolygonBlue.png" />
@@ -20,46 +21,83 @@ export default function HomeDesktop() {
           </TextContainer>
         </ContainerTriangle>
       </ContainerFirst>
-      <ContainerSecond>
-        <ContainerTitle>QUE HACEMOS EN GRINOX</ContainerTitle>
-        <ContainerGear>
-  <GearContainer>
-    <GearBlue src="img/Logos/BlueGear.png"/>
-    <GearText>
-      MANTENIMIENTO
-      <br />
-      <span>Ver más</span>
-    </GearText>
-  </GearContainer>
+      <ContainerTitle>QUE HACEMOS EN GRINOX</ContainerTitle>
+      <ContainerGear>
+        <GearContainer>
+          <GearBlue src="img/Logos/BlueGear.png" />
+          <GearText>
+            MANTENIMIENTO
+            <br />
+            <span>Ver más</span>
+          </GearText>
+        </GearContainer>
 
-  <GearContainer>
-    <GearBlue src="img/Logos/BlueGear.png" alt="" />
-    <GearText>
-      MONTAJE
-      <br />
-      <span>Ver más</span>
-    </GearText>
-  </GearContainer>
+        <GearContainer>
+          <GearBlue src="img/Logos/BlueGear.png" alt="" />
+          <GearText>
+            MONTAJE
+            <br />
+            <span>Ver más</span>
+          </GearText>
+        </GearContainer>
 
-  <GearContainer>
-    <GearBlue src="img/Logos/BlueGear.png" alt="" />
-    <GearText>
-      SERVICIOS
-      <br />
-      <span>Ver más</span>
-    </GearText>
-  </GearContainer>
-</ContainerGear>
-      </ContainerSecond>
-    </>
+        <GearContainer>
+          <GearBlue src="img/Logos/BlueGear.png" alt="" />
+          <GearText>
+            SERVICIOS
+            <br />
+            <span>Ver más</span>
+          </GearText>
+        </GearContainer>
+      </ContainerGear>
+      <ListContainer>
+        <List>
+          <ListItem>
+            FABRICACIÓN DE EQUIPOS DE CONTROL DE MÁQUINAS INDUSTRIALES.
+          </ListItem>
+          <ListItem>
+            INSTALACIÓN DE MAQUINARIA INDUSTRIAL EN PLANTAS INDUSTRIALES.
+          </ListItem>
+          <ListItem>
+            DESMONTAJE DE MAQUINARIA Y EQUIPOS DE GRAN ESCALA.
+          </ListItem>
+          <ListItem>
+            ACTIVIDADES DE LOS MECÁNICOS COMPROBADORES DE MAQUINARIA.
+          </ListItem>
+          <ListItem>INSTALACIÓN DE MAQUINARIA EN GENERAL.</ListItem>
+          <ListItem>CONSTRUCCIÓN DE GRANDES DEPÓSITOS.</ListItem>
+        </List>
+      </ListContainer>
+      <ContainerSwipper>
+        <ContainerTitle>¿QUE FABRICAMOS EN GRINOX?</ContainerTitle>
+        <BoxSlide>
+          En la producción de Grinox contamos con el trabajo de varios tipos de
+          maquinária fabricada con nuestras propias manos con las que
+          conseguimos ofrecer el mejor servicio y los mejores resultados a
+          nuestros clientes. <br />Aquí os mostramos algunas:
+        </BoxSlide>
+      </ContainerSwipper>
+      <SlideWorks/>
+    </HomeDesk>
   );
 }
 // 🎨 ESTILOS
 
+const HomeDesk = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("/img/Backgrounds/fondoGear.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+`;
 const ContainerFirst = styled.div`
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   overflow: hidden;
 `;
 
@@ -123,41 +161,24 @@ const TextTriangle = styled.p`
   margin: 0;
   text-align: center;
 `;
-const ContainerSecond = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: url("img/Imgs/Trabajador.png"),
-    url("img/Backgrounds/portadilla.jpg");
-  background-position: right center, left center;
-  background-size: 40% 100%, 60% 100%;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-`;
+const ContainerSecond = styled.div``;
 
 const ContainerTitle = styled.div`
-  position: absolute;
-  top: 7%;
-  right: 10%;
   background-color: white;
   color: black;
   padding: 2% 3% 2% 3%;
   border: solid 4px #447aab;
+  width: 50vh;
+  border-radius: 8px;
+  margin-top: 2%;
+  margin-left: 5%;
+  text-align: center;
 `;
 const ContainerGear = styled.div`
   display: flex;
   justify-content: center;
-  top: 22%;
-  right: 1%;
-  position: absolute;
   flex-wrap: wrap;
-  max-width: 40rem;
 `;
-
 const GearContainer = styled.div`
   position: relative;
   display: inline-block;
@@ -165,7 +186,7 @@ const GearContainer = styled.div`
 `;
 
 const GearBlue = styled.img`
-  width: 280px;
+  width: 40vh;
   height: auto;
   filter: drop-shadow(4px 6px 4px rgba(0, 0, 0, 0.5));
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -193,11 +214,68 @@ const GearText = styled.div`
   transform: translate(-50%, -50%);
   color: white;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.4;
 
   span {
     font-weight: 400;
     font-size: 0.9rem;
   }
+`;
+
+const ListContainer = styled.div`
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  padding: 2rem 3rem;
+  max-width: 800px;
+  margin: 3rem;
+  margin-bottom: 6rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-left: 6px solid #447aab; /* color corporativo */
+`;
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const ListItem = styled.li`
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  line-height: 1.5;
+  padding-left: 2rem;
+  padding-top: 0.1rem;
+
+  &::before {
+    content: "⚙️";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #447aab;
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    color: #447aab;
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+  }
+`;
+const ContainerSwipper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 25%;
+  padding-right: 25%;
+  text-align: center;
+`;
+const BoxSlide = styled.div`
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: black;
+  margin-top: 3%;
+  padding: 3% 10%;
 `;
