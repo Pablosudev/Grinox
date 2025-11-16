@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SlideWorks from  "../Components/SliderWorks.jsx"
+import SlideWorks from "../Components/SliderWorks.jsx";
 
 export default function HomeDesktop() {
   return (
@@ -13,25 +13,33 @@ export default function HomeDesktop() {
             <TextTriangle>
               Nuestra empresa, Grinox Montaje Industrial SL, <br />
               nace de la inquietud emprendedora de un <br />
-              trabajador de la industria calderera con más de <br />
-              20 años de experiencia en el montaje de <br />
+              trabajador de la industria calderera con más de 20 años de
+              experiencia en el montaje de <br />
               instalaciones de almazaras tanto nacionales <br />
               como internacionales.
             </TextTriangle>
           </TextContainer>
         </ContainerTriangle>
       </ContainerFirst>
-      <ContainerTitle>QUE HACEMOS EN GRINOX</ContainerTitle>
-      <ContainerGear>
-        <GearContainer>
-          <GearBlue src="img/Logos/BlueGear.png" />
-          <GearText>
-            MANTENIMIENTO
-            <br />
-            <span>Ver más</span>
-          </GearText>
-        </GearContainer>
 
+      {/* PRIMER SECTOR */}
+      <SectionContainer >
+        <ContainerInfo>
+          <ContainerTitle>
+            EXPERTOS EN MONTAJE INDUSTRIAL PARA ALMAZARAS DE ALTO RENDIMIENTO.
+          </ContainerTitle>
+          <TextInfo>
+            En Grinox somos especialistas en la instalación y montaje de equipos
+            para almazaras modernas, diseñadas para trabajar con máxima
+            eficiencia, seguridad y durabilidad. Nuestro equipo cuenta con más
+            de dos décadas de experiencia en líneas de procesado, tuberías en
+            acero inoxidable, pasarelas, estructuras y sistemas completos de
+            extracción y elaboración de aceite. Trabajamos con precisión
+            industrial y ofrecemos soluciones adaptadas a cada proyecto,
+            garantizando un montaje fiable, limpio y optimizado para obtener el
+            máximo rendimiento en cada campaña.
+          </TextInfo>
+        </ContainerInfo>
         <GearContainer>
           <GearBlue src="img/Logos/BlueGear.png" alt="" />
           <GearText>
@@ -40,7 +48,50 @@ export default function HomeDesktop() {
             <span>Ver más</span>
           </GearText>
         </GearContainer>
+      </SectionContainer>
 
+      {/* SEGUNDO SECTOR */}
+
+      <SectionContainer>
+        <GearContainer>
+          <GearBlue src="img/Logos/BlueGear.png" />
+          <GearText>
+            MANTENIMIENTO
+            <br />
+            <span>Ver más</span>
+          </GearText>
+        </GearContainer>
+        <ContainerInfo>
+          <ContainerTitle>MANTENIMIENTO INDUSTRIAL EN GRINOX</ContainerTitle>
+          <TextInfo>
+            En Grinox ofrecemos un servicio de mantenimiento industrial pensado
+            para asegurar la continuidad, eficiencia y seguridad de las
+            instalaciones. Realizamos intervenciones preventivas, correctivas y
+            de mejora en maquinaria, líneas de procesado, estructuras y sistemas
+            en acero inoxidable. Trabajamos con rapidez, precisión y materiales
+            de máxima calidad para garantizar que cada equipo funcione al 100%
+            durante toda la campaña, evitando paradas no previstas y prolongando
+            la vida útil de la instalación.
+          </TextInfo>
+        </ContainerInfo>
+      </SectionContainer>
+
+      {/* TERCER SECTOR */}
+      <SectionContainer>
+        <ContainerInfo>
+          <ContainerTitle>SERVICIOS GRINOX</ContainerTitle>
+          <TextInfo>
+            Nuestros servicios abarcan todo el ciclo operativo de una almazara
+            moderna: desde el montaje de instalaciones completas hasta la
+            fabricación a medida de componentes en inox, la instalación de
+            tuberías, pasarelas, soportes y líneas de transporte. Ofrecemos
+            soluciones integrales y adaptadas a cada proyecto, con un enfoque
+            técnico que prioriza la eficiencia del proceso, la seguridad en la
+            instalación y la calidad del acabado. Cada servicio Grinox está
+            diseñado para aportar fiabilidad, rendimiento y un acabado impecable
+            en cada detalle.
+          </TextInfo>
+        </ContainerInfo>
         <GearContainer>
           <GearBlue src="img/Logos/BlueGear.png" alt="" />
           <GearText>
@@ -49,7 +100,8 @@ export default function HomeDesktop() {
             <span>Ver más</span>
           </GearText>
         </GearContainer>
-      </ContainerGear>
+      </SectionContainer>
+
       <ListContainer>
         <List>
           <ListItem>
@@ -74,10 +126,11 @@ export default function HomeDesktop() {
           En la producción de Grinox contamos con el trabajo de varios tipos de
           maquinária fabricada con nuestras propias manos con las que
           conseguimos ofrecer el mejor servicio y los mejores resultados a
-          nuestros clientes. <br />Aquí os mostramos algunas:
+          nuestros clientes. <br />
+          Aquí os mostramos algunos de nuestros trabajos:
         </BoxSlide>
       </ContainerSwipper>
-      <SlideWorks/>
+      <SlideWorks />
     </HomeDesk>
   );
 }
@@ -161,29 +214,28 @@ const TextTriangle = styled.p`
   margin: 0;
   text-align: center;
 `;
-const ContainerSecond = styled.div``;
 
-const ContainerTitle = styled.div`
+const ContainerTitle = styled.div.attrs(() => ({
+  'data-fade': true,
+}))`
   background-color: white;
   color: black;
-  padding: 2% 3% 2% 3%;
+  padding: 2%;
   border: solid 4px #447aab;
-  width: 50vh;
   border-radius: 8px;
   margin-top: 2%;
-  margin-left: 5%;
+  font-size: 1rem;
   text-align: center;
 `;
-const ContainerGear = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
-const GearContainer = styled.div`
+
+const GearContainer = styled.div.attrs(() => ({
+  'data-fade': true,
+}))`
   position: relative;
   display: inline-block;
   text-align: center;
 `;
+
 
 const GearBlue = styled.img`
   width: 40vh;
@@ -278,4 +330,25 @@ const BoxSlide = styled.div`
   color: black;
   margin-top: 3%;
   padding: 3% 10%;
+`;
+const ContainerInfo = styled.div.attrs(() => ({
+  'data-fade': true,
+}))`
+  border-radius: 8px;
+  padding: 1%;
+  background-color: #ffffff;
+  width: 50%;
+`;
+
+const SectionContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5%;
+`;
+const TextInfo = styled.p`
+  color: black;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 1rem;
 `;
