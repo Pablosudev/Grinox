@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Maintenance() {
   return (
-    <>
+    <ContainerMaintenance>
       <ImgBackground src="img/Backgrounds/Tuberias.png" alt="" />
       <TitleBox>
         <Title>Montaje y mantenimiento de instalaciones alimentarias</Title>
@@ -51,10 +51,14 @@ export default function Maintenance() {
         <GearR src="img/Imgs/GearR.png" alt="" />
          <GearL src="img/Imgs/GearL.png" alt="" />
       </ContainerColumn>
-    </>
+    </ContainerMaintenance>
   );
 }
-
+const ContainerMaintenance = styled.div`
+  @media screen and (min-width: 723px){
+    display: none;
+  }
+`;
 const ImgBackground = styled.img`
   position: fixed;
   top: 0;

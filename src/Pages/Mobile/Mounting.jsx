@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Mounting() {
   return (
-    <>
+    <ContainerMounting>
       <ImgBackground src="img/Backgrounds/Tuberias.png" alt="" />
       <TitleBox>
         <Title>Montaje y mantenimiento de instalaciones alimentarias</Title>
@@ -36,10 +36,14 @@ export default function Mounting() {
         </ContainerText2>
         <ConexionadoImg src="img/Imgs/Conexionado.png" alt="" />
       </Container>
-    </>
+    </ContainerMounting>
   );
 }
-
+const ContainerMounting = styled.div`
+  @media screen and (min-width: 723px){
+    display: none;
+  }
+`;
 const ImgBackground = styled.img`
   position: fixed;
   top: 0;

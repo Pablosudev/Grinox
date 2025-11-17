@@ -4,7 +4,7 @@ import SliderContainer from "../Components/SliderContainer";
 
 export default function Service() {
   return (
-    <>
+    <ContainerService>
       <ImgBackground src="img/Backgrounds/Tuberias.png" alt="" />
       <TitleBox>
         <Title>Servicios</Title>
@@ -51,9 +51,14 @@ export default function Service() {
         <TitleMachine>DEPÓSITOS</TitleMachine>
         <SliderContainer/>
       </div>
-    </>
+    </ContainerService>
   );
 }
+const ContainerService = styled.div`
+  @media screen and (min-width: 723px){
+    display: none;
+  }
+`;
 const ImgBackground = styled.img`
   position: fixed;
   top: 0;

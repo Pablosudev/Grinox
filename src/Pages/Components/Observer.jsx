@@ -1,16 +1,24 @@
 export function initFadeObserver() {
-  const elements = document.querySelectorAll("[data-fade]");
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("fade-visible");
+          const el = entry.target;
+
+          if (el.hasAttribute("data-fade-left")) {
+            el.classList.add("fade-visible-left");
+          } else if (el.hasAttribute("data-fade-right")) {
+            el.classList.add("fade-visible-right");
+          } else if (el.hasAttribute("data-fade")) {
+            el.classList.add("fade-visible");
+          }
         }
       });
     },
     { threshold: 0.2 }
   );
 
-  elements.forEach((el) => observer.observe(el));
+  document
+    .querySelectorAll("[data-fade], [data-fade-left], [data-fade-right]")
+    .forEach((el) => observer.observe(el));
 }

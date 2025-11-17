@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import SlideWorks from "../Components/SliderWorks.jsx";
-
+import Cards from "../Components/Cards.jsx";
+import WorkGallery from "../Components/WorkGallery.jsx";
+import Accordion from "../Components/Accordion.jsx";
 export default function HomeDesktop() {
   return (
     <HomeDesk>
@@ -23,47 +25,41 @@ export default function HomeDesktop() {
       </ContainerFirst>
 
       {/* PRIMER SECTOR */}
-      <SectionContainer >
-        <ContainerInfo>
-          <ContainerTitle>
-            EXPERTOS EN MONTAJE INDUSTRIAL PARA ALMAZARAS DE ALTO RENDIMIENTO.
-          </ContainerTitle>
-          <TextInfo>
-            En Grinox somos especialistas en la instalación y montaje de equipos
-            para almazaras modernas, diseñadas para trabajar con máxima
-            eficiencia, seguridad y durabilidad. Nuestro equipo cuenta con más
-            de dos décadas de experiencia en líneas de procesado, tuberías en
-            acero inoxidable, pasarelas, estructuras y sistemas completos de
-            extracción y elaboración de aceite. Trabajamos con precisión
-            industrial y ofrecemos soluciones adaptadas a cada proyecto,
-            garantizando un montaje fiable, limpio y optimizado para obtener el
-            máximo rendimiento en cada campaña.
-          </TextInfo>
-        </ContainerInfo>
-        <GearContainer>
+<AccordionWrapper>
+      <AccordionRow>
+        <Accordion title="EXPERTOS EN MONTAJE INDUSTRIAL PARA ALMAZARAS DE ALTO RENDIMIENTO.">
+          En Grinox somos especialistas en la instalación y montaje de equipos
+          para almazaras modernas, diseñadas para trabajar con máxima
+          eficiencia, seguridad y durabilidad. Nuestro equipo cuenta con más de
+          dos décadas de experiencia en líneas de procesado, tuberías en acero
+          inoxidable, pasarelas, estructuras y sistemas completos de extracción
+          y elaboración de aceite. Trabajamos con precisión industrial y
+          ofrecemos soluciones adaptadas a cada proyecto, garantizando un
+          montaje fiable, limpio y optimizado para obtener el máximo rendimiento
+          en cada campaña.
+        </Accordion>
+      </AccordionRow>
+      {/* <GearContainer>
           <GearBlue src="img/Logos/BlueGear.png" alt="" />
           <GearText>
             MONTAJE
             <br />
             <span>Ver más</span>
           </GearText>
-        </GearContainer>
-      </SectionContainer>
-
+        </GearContainer> */}
       {/* SEGUNDO SECTOR */}
 
-      <SectionContainer>
-        <GearContainer>
+      {/* <GearContainer>
           <GearBlue src="img/Logos/BlueGear.png" />
           <GearText>
             MANTENIMIENTO
             <br />
             <span>Ver más</span>
           </GearText>
-        </GearContainer>
-        <ContainerInfo>
-          <ContainerTitle>MANTENIMIENTO INDUSTRIAL EN GRINOX</ContainerTitle>
-          <TextInfo>
+        </GearContainer> */}
+      <AccordionRow>
+        
+          <Accordion title="MANTENIMIENTO INDUSTRIAL EN GRINOX">
             En Grinox ofrecemos un servicio de mantenimiento industrial pensado
             para asegurar la continuidad, eficiencia y seguridad de las
             instalaciones. Realizamos intervenciones preventivas, correctivas y
@@ -72,15 +68,12 @@ export default function HomeDesktop() {
             de máxima calidad para garantizar que cada equipo funcione al 100%
             durante toda la campaña, evitando paradas no previstas y prolongando
             la vida útil de la instalación.
-          </TextInfo>
-        </ContainerInfo>
-      </SectionContainer>
-
+          </Accordion>
+        
+      </AccordionRow>
       {/* TERCER SECTOR */}
-      <SectionContainer>
-        <ContainerInfo>
-          <ContainerTitle>SERVICIOS GRINOX</ContainerTitle>
-          <TextInfo>
+        <AccordionRow>
+          <Accordion title="SERVICIOS GRINOX">
             Nuestros servicios abarcan todo el ciclo operativo de una almazara
             moderna: desde el montaje de instalaciones completas hasta la
             fabricación a medida de componentes en inox, la instalación de
@@ -90,19 +83,39 @@ export default function HomeDesktop() {
             instalación y la calidad del acabado. Cada servicio Grinox está
             diseñado para aportar fiabilidad, rendimiento y un acabado impecable
             en cada detalle.
-          </TextInfo>
-        </ContainerInfo>
-        <GearContainer>
+          </Accordion>
+        </AccordionRow>
+        {/* <GearContainer>
           <GearBlue src="img/Logos/BlueGear.png" alt="" />
           <GearText>
             SERVICIOS
             <br />
             <span>Ver más</span>
           </GearText>
-        </GearContainer>
-      </SectionContainer>
+        </GearContainer> */}
+      </AccordionWrapper>
+      {/* TARJETAS */}
+      <Cards />
+      <HistorySection data-fade>
+        <h2>UN POCO MÁS SOBRE NOSOTROS</h2>
+        <p>
+          La empresa nace con el nombre de Rafael García Arroyo como trabajador
+          autónomo y posteriormente pasa a ser una sociedad limitada con el
+          espíritu de dar servicio al sector oleícola, como principal actividad
+          y otros sectores del sector alimentario. Nuestros trabajos dentro del
+          sector oleícola engloban las instalaciones de acero inoxidable,
+          montaje y mantenimiento de maquinaria y su conexionado a los
+          diferentes elementos de las fabricas de aceites. Somo una empresa
+          joven con la ilusión de ampliar nuestro horizonte de trabajo a otros
+          sectores como el vitivinícola, producción industrial de bebidas y a
+          todos los sectores industriales que precisen del mantenimiento de
+          instalaciones con conducciones medianet tubos de acero inoxidable.
+        </p>
+      </HistorySection>
 
-      <ListContainer>
+      {/* GALERIA */}
+       <WorkGallery />
+       {/* <ListContainer>
         <List>
           <ListItem>
             FABRICACIÓN DE EQUIPOS DE CONTROL DE MÁQUINAS INDUSTRIALES.
@@ -119,8 +132,8 @@ export default function HomeDesktop() {
           <ListItem>INSTALACIÓN DE MAQUINARIA EN GENERAL.</ListItem>
           <ListItem>CONSTRUCCIÓN DE GRANDES DEPÓSITOS.</ListItem>
         </List>
-      </ListContainer>
-      <ContainerSwipper>
+      </ListContainer>  */} 
+      {/* <ContainerSwipper>
         <ContainerTitle>¿QUE FABRICAMOS EN GRINOX?</ContainerTitle>
         <BoxSlide>
           En la producción de Grinox contamos con el trabajo de varios tipos de
@@ -129,8 +142,7 @@ export default function HomeDesktop() {
           nuestros clientes. <br />
           Aquí os mostramos algunos de nuestros trabajos:
         </BoxSlide>
-      </ContainerSwipper>
-      <SlideWorks />
+      </ContainerSwipper> */}
     </HomeDesk>
   );
 }
@@ -146,6 +158,7 @@ const HomeDesk = styled.div`
   background-attachment: fixed;
   position: relative;
   z-index: 0;
+  padding-bottom: 5%;
 `;
 const ContainerFirst = styled.div`
   position: relative;
@@ -215,140 +228,51 @@ const TextTriangle = styled.p`
   text-align: center;
 `;
 
-const ContainerTitle = styled.div.attrs(() => ({
-  'data-fade': true,
-}))`
-  background-color: white;
-  color: black;
-  padding: 2%;
-  border: solid 4px #447aab;
-  border-radius: 8px;
-  margin-top: 2%;
-  font-size: 1rem;
-  text-align: center;
-`;
-
-const GearContainer = styled.div.attrs(() => ({
-  'data-fade': true,
-}))`
-  position: relative;
-  display: inline-block;
-  text-align: center;
-`;
 
 
-const GearBlue = styled.img`
-  width: 40vh;
-  height: auto;
-  filter: drop-shadow(4px 6px 4px rgba(0, 0, 0, 0.5));
-  transition: transform 0.3s ease, filter 0.3s ease;
-  animation: rotateGear 20s linear infinite;
 
-  &:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(8px 10px 8px rgba(0, 0, 0, 0.6));
-  }
 
-  @keyframes rotateGear {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
 
-const GearText = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.4;
 
-  span {
-    font-weight: 400;
-    font-size: 0.9rem;
-  }
-`;
 
-const ListContainer = styled.div`
-  background-color: white;
-  color: black;
+
+const HistorySection = styled.div`
+  margin-top: 5rem;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
   border-radius: 12px;
-  padding: 2rem 3rem;
-  max-width: 800px;
-  margin: 3rem;
-  margin-bottom: 6rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-left: 6px solid #447aab; /* color corporativo */
+  color: white;
+  text-align: center;
+  line-height: 1.8;
 `;
-
-const List = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const ListItem = styled.li`
-  position: relative;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 1rem 0;
-  line-height: 1.5;
-  padding-left: 2rem;
-  padding-top: 0.1rem;
-
-  &::before {
-    content: "⚙️";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #447aab;
-    font-size: 1.3rem;
-  }
-
-  &:hover {
-    color: #447aab;
-    transform: translateX(5px);
-    transition: all 0.2s ease;
-  }
-`;
-const ContainerSwipper = styled.div`
+const AccordionWrapper = styled.div`
+  width: 100%;
+  padding: 0 3rem; /* deja espacio respirable */
+  margin: 4rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-left: 25%;
-  padding-right: 25%;
-  text-align: center;
-`;
-const BoxSlide = styled.div`
-  border-radius: 8px;
-  background-color: #ffffff;
-  color: black;
-  margin-top: 3%;
-  padding: 3% 10%;
-`;
-const ContainerInfo = styled.div.attrs(() => ({
-  'data-fade': true,
-}))`
-  border-radius: 8px;
-  padding: 1%;
-  background-color: #ffffff;
-  width: 50%;
+  gap: 2.5rem;
+
 `;
 
-const SectionContainer = styled.div`
+const AccordionRow = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 5%;
+  width: 100%;
+
+  &:nth-child(odd) {
+    justify-content: flex-start; /* IZQUIERDA */
+  }
+
+  &:nth-child(even) {
+    justify-content: flex-end;   /* DERECHA */
+  }
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
 `;
-const TextInfo = styled.p`
-  color: black;
-  margin-top: 2%;
-  margin-left: 2%;
-  margin-right: 2%;
-  font-size: 1rem;
-`;
+

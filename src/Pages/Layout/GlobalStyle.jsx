@@ -1,45 +1,43 @@
-import { createGlobalStyle, keyframes } from "styled-components";
+import { createGlobalStyle } from "styled-components";
+export const GlobalStyle = createGlobalStyle`
 
-const fadeIn = keyframes`
-  from {
+  /* ==== FADES BASE ==== */
+  [data-fade],
+  [data-fade-left],
+  [data-fade-right] {
     opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  /* ==== FADE NORMAL (DESDE ABAJO) ==== */
+  [data-fade] {
     transform: translateY(20px);
   }
-  to {
+  .fade-visible {
     opacity: 1;
     transform: translateY(0);
   }
-`;
 
-export const GlobalStyle = createGlobalStyle`
-  .fade-in {
-    opacity: 0;
-    animation: ${fadeIn} 0.9s ease forwards;
+  /* ==== FADE IZQUIERDA ==== */
+  [data-fade-left] {
+    transform: translateX(-40px);
+  }
+  .fade-visible-left {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  .fade-in-delayed {
-    opacity: 0;
-    animation: ${fadeIn} 0.9s ease forwards;
-    animation-delay: 0.3s;
+  /* ==== FADE DERECHA ==== */
+  [data-fade-right] {
+    transform: translateX(40px);
+  }
+  .fade-visible-right {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  .fade-in-slow {
-    opacity: 0;
-    animation: ${fadeIn} 1.4s ease forwards;
-  }
-
-  
-  [data-fade] {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .fade-visible {
-    animation: ${fadeIn} 0.8s ease forwards;
-  }
-
-  * {  
+  /* ==== RESET ==== */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;

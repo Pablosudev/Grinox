@@ -27,11 +27,15 @@ export default function Contact() {
     </ContainerContact>
   );
 }
+ 
 const ContainerContact = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 723px){
+    display: none;
+  }
 `;
 const ImgBackground = styled.img`
   position: fixed;
