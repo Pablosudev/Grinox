@@ -5,7 +5,7 @@ import SliderContainer from "../Components/SliderContainer";
 export default function Service() {
   return (
     <ContainerService>
-      <ImgBackground src="img/Backgrounds/Tuberias.png" alt="" />
+      <ImgBackground src="img/Backgrounds/Tuberias.png" />
       <TitleBox>
         <Title>Servicios</Title>
       </TitleBox>
@@ -35,7 +35,9 @@ export default function Service() {
         <DataTitle>FABRICACIONES</DataTitle>
         <ContainerProduct>
           <ContainerProductFlex>
-            <TitleProduct>Carro para transporte de sustancias químicas</TitleProduct>
+            <TitleProduct>
+              Carro para transporte de sustancias químicas
+            </TitleProduct>
             <Product src="img/Imgs/Carro.png" alt="" />
           </ContainerProductFlex>
           <DataProduct>
@@ -47,15 +49,15 @@ export default function Service() {
           </DataProduct>
         </ContainerProduct>
         <TitleMachine>MAQUINARIA PARA ALMAZARAS</TitleMachine>
-        <SliderMachine/>
+        <SliderMachine />
         <TitleMachine>DEPÓSITOS</TitleMachine>
-        <SliderContainer/>
+        <SliderContainer />
       </div>
     </ContainerService>
   );
 }
 const ContainerService = styled.div`
-  @media screen and (min-width: 723px){
+  @media screen and (min-width: 723px) {
     display: none;
   }
 `;
@@ -135,19 +137,19 @@ const Cross = styled.img`
   z-index: 100;
 `;
 const ContainerProductFlex = styled.div`
- padding: 3%; 
+  padding: 3%;
   margin: 5%;
   display: flex;
- width: 100%;
+  width: 100%;
 `;
 const ContainerProduct = styled.div`
-background-color: white;
+  background-color: white;
   border-radius: 8px;
   margin: 5%;
   padding-bottom: 10%;
 `;
 const TitleProduct = styled.h1`
-  color:#447aab;
+  color: #447aab;
   font-size: 1.3rem;
   font-weight: 400;
   margin-top: 13%;
@@ -164,9 +166,9 @@ const DataProduct = styled.p`
   padding-right: 5%;
 `;
 const TitleMachine = styled.h1`
-  color:white;
+  color: white;
   font-size: 1.7rem;
-  font-weight:400;
+  font-weight: 400;
   text-align: center;
   margin-top: 15%;
 `;

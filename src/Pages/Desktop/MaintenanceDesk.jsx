@@ -46,11 +46,27 @@ export default function MaintenanceDesktop() {
         </AccordionRow>
       </AccordionWrapper>
       <CardsMaintenance />
-      <Title>BENEFICIOS DE HACERLO CON GRINOX</Title>
+      <Title>BENEFICIOS DE HACERLO CON <b style={{color:"#447aab"}}>GRINOX</b></Title>
 
-      <ContainerSecond>
+      <ListContainer>
+         <List>
+          <ListItem>
+            TÉCNICOS ESPECIALIZADOS EN ENTORNOS ALIMENTARIOS.
+          </ListItem>
+          <ListItem>
+            CUMPLIMIENTO CON NORMATIVAS.
+          </ListItem>
+          <ListItem>
+            DESMONTAJE DE MAQUINARIA Y EQUIPOS DE GRAN ESCALA.
+          </ListItem>
+          <ListItem>
+            ACTIVIDADES DE LOS MECÁNICOS COMPROBADORES DE MAQUINARIA.
+          </ListItem>
+          <ListItem>INSTALACIÓN DE MAQUINARIA EN GENERAL.</ListItem>
+          <ListItem>CONSTRUCCIÓN DE GRANDES DEPÓSITOS.</ListItem>
+        </List>
         <Logo src="img/Logos/GR.png"/>
-      </ContainerSecond>
+      </ListContainer>
     </MainDesk>
   );
 }
@@ -65,6 +81,7 @@ const MainDesk = styled.div`
   background-attachment: fixed;
   position: relative;
   z-index: 0;
+  padding-bottom: 5%;
 `;
 const ContainerFirst = styled.div`
   position: relative;
@@ -155,6 +172,7 @@ const TitleGrinox = styled.h1`
   text-align: center;
   font-weight: 600;
   color: #447aab;
+  padding-top: 4%;
 `;
 const TextGrinox = styled.p`
   padding-left: 5%;
@@ -197,7 +215,9 @@ const AccordionRow = styled.div`
     justify-content: center;
   }
 `;
-const Title = styled.h1`
+const Title = styled.h1.attrs(() => ({
+  "data-fade-left": true,
+}))`
   background-color: #ffffff;
   color: black;
   border-radius: 8px;
@@ -211,13 +231,55 @@ const Title = styled.h1`
   
 
 `;
-const ContainerSecond = styled.div.attrs(() => ({
-  "data-fade-right": true,
-}))`
-  background-color: #ffffff;
-`;
 
 const Logo = styled.img`
 width: 7rem;
 margin-left: 2%;
+position:absolute;
+right: 5%;
+bottom: 3%;
+`;
+const ListContainer = styled.div.attrs(() => ({
+  "data-fade-right": true,
+}))`
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  padding: 2rem 3rem;
+  max-width: 800px;
+  margin: 3rem;
+  margin-bottom: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-left: 6px solid #447aab;
+  position: relative;
+  left:25%;
+`;
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const ListItem = styled.li`
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  line-height: 1.5;
+  padding-left: 2rem;
+
+  &::before {
+    content: "⚙️";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #447aab;
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    color: #447aab;
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+  }
 `;

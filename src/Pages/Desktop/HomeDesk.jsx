@@ -25,21 +25,21 @@ export default function HomeDesktop() {
       </ContainerFirst>
 
       {/* PRIMER SECTOR */}
-<AccordionWrapper>
-      <AccordionRow>
-        <Accordion title="EXPERTOS EN MONTAJE INDUSTRIAL PARA ALMAZARAS DE ALTO RENDIMIENTO.">
-          En Grinox somos especialistas en la instalación y montaje de equipos
-          para almazaras modernas, diseñadas para trabajar con máxima
-          eficiencia, seguridad y durabilidad. Nuestro equipo cuenta con más de
-          dos décadas de experiencia en líneas de procesado, tuberías en acero
-          inoxidable, pasarelas, estructuras y sistemas completos de extracción
-          y elaboración de aceite. Trabajamos con precisión industrial y
-          ofrecemos soluciones adaptadas a cada proyecto, garantizando un
-          montaje fiable, limpio y optimizado para obtener el máximo rendimiento
-          en cada campaña.
-        </Accordion>
-      </AccordionRow>
-      {/* <GearContainer>
+      <AccordionWrapper>
+        <AccordionRow>
+          <Accordion title="EXPERTOS EN MONTAJE INDUSTRIAL PARA ALMAZARAS DE ALTO RENDIMIENTO.">
+            En Grinox somos especialistas en la instalación y montaje de equipos
+            para almazaras modernas, diseñadas para trabajar con máxima
+            eficiencia, seguridad y durabilidad. Nuestro equipo cuenta con más
+            de dos décadas de experiencia en líneas de procesado, tuberías en
+            acero inoxidable, pasarelas, estructuras y sistemas completos de
+            extracción y elaboración de aceite. Trabajamos con precisión
+            industrial y ofrecemos soluciones adaptadas a cada proyecto,
+            garantizando un montaje fiable, limpio y optimizado para obtener el
+            máximo rendimiento en cada campaña.
+          </Accordion>
+        </AccordionRow>
+        {/* <GearContainer>
           <GearBlue src="img/Logos/BlueGear.png" alt="" />
           <GearText>
             MONTAJE
@@ -47,9 +47,9 @@ export default function HomeDesktop() {
             <span>Ver más</span>
           </GearText>
         </GearContainer> */}
-      {/* SEGUNDO SECTOR */}
+        {/* SEGUNDO SECTOR */}
 
-      {/* <GearContainer>
+        {/* <GearContainer>
           <GearBlue src="img/Logos/BlueGear.png" />
           <GearText>
             MANTENIMIENTO
@@ -57,8 +57,7 @@ export default function HomeDesktop() {
             <span>Ver más</span>
           </GearText>
         </GearContainer> */}
-      <AccordionRow>
-        
+        <AccordionRow>
           <Accordion title="MANTENIMIENTO INDUSTRIAL EN GRINOX">
             En Grinox ofrecemos un servicio de mantenimiento industrial pensado
             para asegurar la continuidad, eficiencia y seguridad de las
@@ -69,9 +68,8 @@ export default function HomeDesktop() {
             durante toda la campaña, evitando paradas no previstas y prolongando
             la vida útil de la instalación.
           </Accordion>
-        
-      </AccordionRow>
-      {/* TERCER SECTOR */}
+        </AccordionRow>
+        {/* TERCER SECTOR */}
         <AccordionRow>
           <Accordion title="SERVICIOS GRINOX">
             Nuestros servicios abarcan todo el ciclo operativo de una almazara
@@ -114,8 +112,8 @@ export default function HomeDesktop() {
       </HistorySection>
 
       {/* GALERIA */}
-       <WorkGallery />
-       {/* <ListContainer>
+      <WorkGallery />
+      {/* <ListContainer>
         <List>
           <ListItem>
             FABRICACIÓN DE EQUIPOS DE CONTROL DE MÁQUINAS INDUSTRIALES.
@@ -132,7 +130,7 @@ export default function HomeDesktop() {
           <ListItem>INSTALACIÓN DE MAQUINARIA EN GENERAL.</ListItem>
           <ListItem>CONSTRUCCIÓN DE GRANDES DEPÓSITOS.</ListItem>
         </List>
-      </ListContainer>  */} 
+      </ListContainer>  */}
       {/* <ContainerSwipper>
         <ContainerTitle>¿QUE FABRICAMOS EN GRINOX?</ContainerTitle>
         <BoxSlide>
@@ -159,6 +157,9 @@ const HomeDesk = styled.div`
   position: relative;
   z-index: 0;
   padding-bottom: 5%;
+   @media screen and (max-width: 723px){
+    display: none;
+  }
 `;
 const ContainerFirst = styled.div`
   position: relative;
@@ -228,14 +229,6 @@ const TextTriangle = styled.p`
   text-align: center;
 `;
 
-
-
-
-
-
-
-
-
 const HistorySection = styled.div`
   margin-top: 5rem;
   padding-left: 2%;
@@ -256,7 +249,6 @@ const AccordionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-
 `;
 
 const AccordionRow = styled.div`
@@ -268,11 +260,10 @@ const AccordionRow = styled.div`
   }
 
   &:nth-child(even) {
-    justify-content: flex-end;   /* DERECHA */
+    justify-content: flex-end; /* DERECHA */
   }
 
   @media (max-width: 900px) {
     justify-content: center;
   }
 `;
-

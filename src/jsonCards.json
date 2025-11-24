@@ -1,0 +1,50 @@
+[
+    {
+        "id" : 1,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    },
+    {
+        "id" : 2,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    },
+    {
+        "id" : 3,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    },
+    {
+        "id" : 4,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    },
+    {
+        "id" : 5,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    },
+    {
+        "id" : 6,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    },
+    {
+        "id" : 7,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    },
+    {
+        "id" : 8,
+        "name":"MOLINO TRITURADOR DE ACEITUNA",
+        "imagen": "/img/Imgs/Maquina1.png",
+        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+    }
+]
