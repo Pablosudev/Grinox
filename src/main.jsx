@@ -5,7 +5,7 @@ import { initFadeObserver } from "./Pages/Components/Observer";
 import { GlobalStyle } from "./Pages/Layout/GlobalStyle";
 import Layout from "./Pages/Layout/Layout";
 import Mounting from "./Pages/Mobile/Mounting";
-import Contact from "./Pages/Mobile/Contact";
+import ContactPage from "./Pages/Pages/ContactPage";
 import HomePage from "./Pages/Pages/HomePage";
 import MaintenancePage from "./Pages/Pages/MaintenancePage";
 import ServicePage from "./Pages/Pages/Service";
@@ -26,7 +26,7 @@ function App() {
             <Route path="/montaje" element={<Mounting />} />
             <Route path="/mantenimiento" element={<MaintenancePage />} />
             <Route path="/servicios" element={<ServicePage />} />
-            <Route path="/contacto" element={<Contact />} />
+            <Route path="/contacto" element={<ContactPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -228,7 +228,7 @@ const Title = styled.h1.attrs(() => ({
   width: 30%;
   margin-top: 5%;
   margin-bottom:5%;
-  
+  text-align: center;
 
 `;
 

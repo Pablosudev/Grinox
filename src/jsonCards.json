@@ -1,26 +1,26 @@
 [
     {
         "id" : 1,
-        "name":"MOLINO TRITURADOR DE ACEITUNA",
-        "imagen": "/img/Imgs/Maquina1.png",
+        "name":"DECANTADORES SEPARADORES DE 2 FASES",
+        "imagen": "/img/Maquinas/maquina1.png",
         "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
     },
     {
         "id" : 2,
-        "name":"MOLINO TRITURADOR DE ACEITUNA",
-        "imagen": "/img/Imgs/Maquina1.png",
+        "name":"DECANTADORES SEPARADORES DE 3 FASES",
+        "imagen": "/img/Maquinas/maquina2.png",
         "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
     },
     {
         "id" : 3,
-        "name":"MOLINO TRITURADOR DE ACEITUNA",
-        "imagen": "/img/Imgs/Maquina1.png",
+        "name":"CENTRÍFUGAS PARA RECUPERACIÓN DE ACEITE",
+        "imagen": "/img/Maquinas/maquina3.png",
         "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
     },
     {
         "id" : 4,
-        "name":"MOLINO TRITURADOR DE ACEITUNA",
-        "imagen": "/img/Imgs/Maquina1.png",
+        "name":"BOMBAS DE PINTÓN",
+        "imagen": "/img/Maquinas/maquina1.png",
         "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
     },
     {

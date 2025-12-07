@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import maquinas from "../../jsonCards.json";
 
 export default function ServiceDesk() {
   return (
@@ -69,6 +70,24 @@ export default function ServiceDesk() {
           </ContainerProduct>
         </CardWrapper>
       </Fabricacion>
+      <TitleF>MAQUINARIA</TitleF>
+      <Products>
+        {maquinas.map((maq) => (
+          <CardWrapper>
+            <ContainerProduct>
+              <TitleInside>{maq.name}</TitleInside>
+
+              <ProductImage src={maq.imagen} />
+
+              <Overlay />
+
+              <ProductContent>
+                <InfoProduct>{maq.info}</InfoProduct>
+              </ProductContent>
+            </ContainerProduct>
+          </CardWrapper>
+        ))}
+      </Products>
     </ContainerServiceDesk>
   );
 }
@@ -115,7 +134,7 @@ const ContainerRow = styled.div`
   align-items: center;
 `;
 const Fabricacion = styled.div`
-  padding-top: 5%;
+  padding-top: 2%;
   display: flex;
   justify-content: center;
   gap: 2%;
@@ -153,7 +172,7 @@ const ContainerProduct = styled.div`
   cursor: pointer;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
-
+  margin-bottom: 8%;
   &:hover {
     transform: scale(1.035);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
@@ -165,12 +184,12 @@ const TitleInside = styled.h3`
   top: 14px;
   left: 18px;
   z-index: 5;
-
+  max-width: 90%;
   font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
   padding: 6px 12px;
-
+  text-align: center;
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(3px);
   border-radius: 8px;
@@ -237,4 +256,11 @@ const InfoProduct = styled.p`
   color: #ffffff;
   line-height: 1.45;
   font-weight: 300;
+`;
+const Products = styled.div`
+  padding-top: 2%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2%;
 `;
