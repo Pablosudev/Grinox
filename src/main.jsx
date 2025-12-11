@@ -9,6 +9,7 @@ import ContactPage from "./Pages/Pages/ContactPage";
 import HomePage from "./Pages/Pages/HomePage";
 import MaintenancePage from "./Pages/Pages/MaintenancePage";
 import ServicePage from "./Pages/Pages/Service";
+import MountingPage from "./Pages/Pages/Mounting";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/montaje" element={<Mounting />} />
+            <Route path="/montaje" element={<MountingPage/>} />
             <Route path="/mantenimiento" element={<MaintenancePage />} />
             <Route path="/servicios" element={<ServicePage />} />
             <Route path="/contacto" element={<ContactPage />} />

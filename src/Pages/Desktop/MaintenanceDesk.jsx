@@ -82,6 +82,9 @@ const MainDesk = styled.div`
   position: relative;
   z-index: 0;
   padding-bottom: 5%;
+     @media screen and (max-width: 723px){
+    display: none;
+  }
 `;
 const ContainerFirst = styled.div`
   position: relative;
