@@ -278,7 +278,7 @@ const FooterBack = styled.img`
   background-position: center;
   background-size: cover;
   min-width: 100%;
-  height: 70vh;
+  height: 75vh;
   position: absolute;
   object-fit: cover;
 `;

@@ -28,8 +28,7 @@ export default function MountingDesk() {
         <AccordionRow>
           <Container>
             <ContainerText>
-                        <TitleGrinox>INSTALACIONES A MEDIDA</TitleGrinox>
-
+              <TitleGrinox>INSTALACIONES A MEDIDA</TitleGrinox>
               <TextGrinox>
                 Diseñamos y ejecutamos instalaciones industriales totalmente
                 adaptadas a las necesidades de cada cliente
@@ -73,13 +72,13 @@ export default function MountingDesk() {
       <AccordionWrapper>
         <AccordionRow>
           <Container>
-            <ContainerText>
+            <ContainerTextSecond>
               Utilizamos técnicas avanzadas de soldadura y ensamblaje, cuidando
               cada detalle para asegurar un flujo óptico y sin contaminaciones.
               Nuestro equipo está especializado en instalaciones para la
               industria alimentaria, donde la presicisión y la higiene no son
               opcionales, sino esenciales.
-            </ContainerText>
+            </ContainerTextSecond>
           </Container>
         </AccordionRow>
       </AccordionWrapper>
@@ -211,7 +210,7 @@ const Portada = styled.img.attrs(() => ({
 
 const AccordionWrapper = styled.div`
   width: 100%;
-  padding: 0 3rem; 
+  padding: 0 3rem;
   margin: 4rem 0;
   display: flex;
   flex-direction: column;
@@ -221,7 +220,7 @@ const AccordionWrapper = styled.div`
 
 const AccordionRow = styled.div`
   display: flex;
-  justify-content:center;
+  justify-content: center;
   width: 100%;
 
   &:nth-child(odd) {
@@ -236,4 +235,14 @@ const AccordionRow = styled.div`
     justify-content: center;
   }
 `;
-
+const ContainerTextSecond = styled.div.attrs(() => ({
+  "data-fade-left": true,
+}))`
+  margin-top: 3%;
+  margin-left: 5%;
+  color: black;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 50%;
+  padding: 1% 2%;
+`;
