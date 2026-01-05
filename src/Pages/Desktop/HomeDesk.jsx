@@ -39,24 +39,7 @@ export default function HomeDesktop() {
             máximo rendimiento en cada campaña.
           </Accordion>
         </AccordionRow>
-        {/* <GearContainer>
-          <GearBlue src="img/Logos/BlueGear.png" alt="" />
-          <GearText>
-            MONTAJE
-            <br />
-            <span>Ver más</span>
-          </GearText>
-        </GearContainer> */}
-        {/* SEGUNDO SECTOR */}
-
-        {/* <GearContainer>
-          <GearBlue src="img/Logos/BlueGear.png" />
-          <GearText>
-            MANTENIMIENTO
-            <br />
-            <span>Ver más</span>
-          </GearText>
-        </GearContainer> */}
+        
         <AccordionRow>
           <Accordion title="MANTENIMIENTO INDUSTRIAL EN GRINOX">
             En Grinox ofrecemos un servicio de mantenimiento industrial pensado
@@ -83,14 +66,7 @@ export default function HomeDesktop() {
             en cada detalle.
           </Accordion>
         </AccordionRow>
-        {/* <GearContainer>
-          <GearBlue src="img/Logos/BlueGear.png" alt="" />
-          <GearText>
-            SERVICIOS
-            <br />
-            <span>Ver más</span>
-          </GearText>
-        </GearContainer> */}
+        
       </AccordionWrapper>
       {/* TARJETAS */}
       <Cards />
@@ -113,34 +89,7 @@ export default function HomeDesktop() {
 
       {/* GALERIA */}
       <WorkGallery />
-      {/* <ListContainer>
-        <List>
-          <ListItem>
-            FABRICACIÓN DE EQUIPOS DE CONTROL DE MÁQUINAS INDUSTRIALES.
-          </ListItem>
-          <ListItem>
-            INSTALACIÓN DE MAQUINARIA INDUSTRIAL EN PLANTAS INDUSTRIALES.
-          </ListItem>
-          <ListItem>
-            DESMONTAJE DE MAQUINARIA Y EQUIPOS DE GRAN ESCALA.
-          </ListItem>
-          <ListItem>
-            ACTIVIDADES DE LOS MECÁNICOS COMPROBADORES DE MAQUINARIA.
-          </ListItem>
-          <ListItem>INSTALACIÓN DE MAQUINARIA EN GENERAL.</ListItem>
-          <ListItem>CONSTRUCCIÓN DE GRANDES DEPÓSITOS.</ListItem>
-        </List>
-      </ListContainer>  */}
-      {/* <ContainerSwipper>
-        <ContainerTitle>¿QUE FABRICAMOS EN GRINOX?</ContainerTitle>
-        <BoxSlide>
-          En la producción de Grinox contamos con el trabajo de varios tipos de
-          maquinária fabricada con nuestras propias manos con las que
-          conseguimos ofrecer el mejor servicio y los mejores resultados a
-          nuestros clientes. <br />
-          Aquí os mostramos algunos de nuestros trabajos:
-        </BoxSlide>
-      </ContainerSwipper> */}
+    
     </HomeDesk>
   );
 }

@@ -24,9 +24,9 @@ export default function Layout() {
           <SecondNav>
             <List>
               <StyledLink href="/">INICIO</StyledLink>
+              <StyledLink href="/servicios">SERVICIOS</StyledLink>
               <StyledLink href="/montaje">MONTAJE</StyledLink>
               <StyledLink href="/mantenimiento">MANTENIMIENTO</StyledLink>
-              <StyledLink href="/servicios">SERVICIOS</StyledLink>
               <StyledLink href="/contacto">CONTACTO</StyledLink>
               {/* <GrinoxImg src="img/Logos/GR.png"/> */}
             </List>
@@ -34,6 +34,9 @@ export default function Layout() {
         </Navbar>
         {isOpen && <Overlay onClick={closeMenu} />}
         <MenuDrop id="menu-drop" $open={isOpen}>
+          <StyledLink href="/">
+            <TitleDrop>INICIO</TitleDrop>
+          </StyledLink>
           <StyledLink href="/montaje">
             <TitleDrop>MONTAJE</TitleDrop>
           </StyledLink>
@@ -73,22 +76,33 @@ export default function Layout() {
           <TitleFooter>
             Intervenimos en todo el mundo. ¿Hablamos de tu proyecto?
           </TitleFooter>
+          <FooterInfo>
+            <FooterColumns>
+              <ul>
+                <li>
+                  <PhoneLogo /> 678574652 / 662543947
+                </li>
+                <li>
+                  <MailLogo /> grinoxindustrial@gmail.com
+                </li>
+                <li>
+                  <UbiLogo /> Polígono la Fuenblanquilla, parcela 5-3-1
+                  <br />
+                  14650 Bujalance (Córdoba)
+                </li>
+              </ul>
+            </FooterColumns>
 
-          <FooterColumns>
-            <ul>
-              <li>
-                <PhoneLogo /> 678574652 / 662543947
-              </li>
-              <li>
-                <MailLogo /> grinoxindustrial@gmail.com
-              </li>
-              <li>
-                <UbiLogo /> Polígono la Fuenblanquilla, parcela 5-3-1
-                <br />
-                14650 Bujalance (Córdoba)
-              </li>
-            </ul>
-          </FooterColumns>
+            <FooterCert href="/iso">
+              <img src="img/Logos/ISO.png" alt="rea" />
+              <CertInfo>Certificado ISO</CertInfo>
+            </FooterCert>
+
+            <FooterCert href="/rea">
+              <img src="img/Logos/ReaIcon.png" alt="rea" />
+              <CertInfo>Certificado REA</CertInfo>
+            </FooterCert>
+          </FooterInfo>
         </FooterDesk>
       </Layaout>
     </>
@@ -177,16 +191,19 @@ const TitleFooter = styled.h1`
     text-align: center;
   }
 `;
+const FooterInfo = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5%;
+`;
 const FooterColumns = styled.div`
   position: relative;
-  
   z-index: 2;
 
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-top: 10%;
 
     li {
       display: flex;
@@ -199,6 +216,27 @@ const FooterColumns = styled.div`
       font-weight: 400;
     }
   }
+`;
+const FooterCert = styled.a`
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  max-width: 15%;
+  height: 10%;
+  z-index: 1;
+  cursor: pointer;
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+`;
+const CertInfo = styled.p`
+  color: #447aab;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding-bottom: 5%;
 `;
 const ContainerPhone = styled.div`
   display: flex;

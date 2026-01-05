@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import CardsMounting from "../Components/CardsMounting";
 export default function MountingDesk() {
   return (
     <MainDesk>
@@ -8,9 +8,7 @@ export default function MountingDesk() {
         <Polygon src="img/Logos/PolygonBlue.png" />
         <ContainerTriangle>
           <TextContainer>
-            <TitleTriangle>
-              MONTAJE Y MANTENIMIENTO DE INSTALACIONES ALIMENTARIAS
-            </TitleTriangle>
+            <TitleTriangle>MONTAJE DE INSTALACIONES ALIMENTARIAS</TitleTriangle>
             <TextTriangle>
               En <Negrita>Grinox Industrial</Negrita> ofrecemos soluciones
               integrales en montaje industrial, adaptadas a las exigencias del
@@ -19,66 +17,98 @@ export default function MountingDesk() {
           </TextContainer>
         </ContainerTriangle>
       </ContainerFirst>
-      <Container>
-        <ContainerText>
-          <TitleGrinox>INSTALACIONES A MEDIDA</TitleGrinox>
-        </ContainerText>
-      </Container>
+      <CardsMounting />
       <AccordionWrapper>
         <AccordionRow>
           <Container>
             <ContainerText>
-              <TitleGrinox>INSTALACIONES A MEDIDA</TitleGrinox>
+              <TitleGrinox>MONTAJE MECÁCNICO</TitleGrinox>
               <TextGrinox>
-                Diseñamos y ejecutamos instalaciones industriales totalmente
-                adaptadas a las necesidades de cada cliente
+                Realizamos el ensamblaje y la instalación de equipos y conjuntos
+                industriales con precisión y método. Cuidamos anclajes,
+                soportaciones y uniones para garantizar estabilidad, durabilidad
+                y facilidad de mantenimiento. Montajes pensados para trabajar,
+                no solo para “quedar instalados”.
               </TextGrinox>
             </ContainerText>
             <Portada src="/img/Imgs/Deposito1.png" alt="Depósito" />
           </Container>
         </AccordionRow>
-        <AccordionWrapper>
-          <AccordionRow>
-            <Container>
-              <ContainerText>
-                <TextGrinox>
-                  En Grinox Industrial combinamos experiencia técnica y
-                  flexibilidad para desarrollar soluciones eficientes, seguras y
-                  personalizadas.Nos adaptamos a cada entorno de trabajo,
-                  cumpliendo con los más altos estándares del sector
-                  alimentarioe industrial. Cada instalación es pensada para
-                  maximizar el rendimiento y minimizar los tiempos de parada.
-                </TextGrinox>
-              </ContainerText>
-            </Container>
-          </AccordionRow>
-        </AccordionWrapper>
       </AccordionWrapper>
+      <Container>
+        <InfoSection data-fade>
+          <p>
+            En Grinox Industrial combinamos experiencia técnica y flexibilidad
+            para desarrollar soluciones eficientes, seguras y personalizadas.Nos
+            adaptamos a cada entorno de trabajo, cumpliendo con los más altos
+            estándares del sector alimentarioe industrial. Cada instalación es
+            pensada para maximizar el rendimiento y minimizar los tiempos de
+            parada.
+          </p>
+        </InfoSection>
+      </Container>
+
       <AccordionWrapper>
         <AccordionRow>
           <Container>
             <Portada src="/img/Imgs/Conexionado.png" alt="Conexionado" />
-            <ContainerText>
-              <TitleGrinox>CONEXIONADO DE ACERO INOXIDABLE</TitleGrinox>
+            <ContainerTextR>
+              <TitleGrinox>CONEXIONADO Y VERIFICACIÓN</TitleGrinox>
               <TextGrinox>
                 Realizamos conexionado industrial en acero inoxidable con
-                acabados de alta calidad, pensado para entornosexigentes.
-                Garantizamos seguridad, limpieza y durabilidad en cada unión.
+                acabados de alta calidad, pensado para entornos exigentes.
+                Garantizamos seguridad, limpieza y durabilidad en cada
+                unión.Comprobamos integridad, accesibilidad y seguridad antes de
+                la entrega, para reducir incidencias en la puesta en marcha.
               </TextGrinox>
-            </ContainerText>
+            </ContainerTextR>
           </Container>
         </AccordionRow>
       </AccordionWrapper>
       <AccordionWrapper>
         <AccordionRow>
           <Container>
-            <ContainerTextSecond>
+            <InfoSection data-fade>
               Utilizamos técnicas avanzadas de soldadura y ensamblaje, cuidando
               cada detalle para asegurar un flujo óptico y sin contaminaciones.
               Nuestro equipo está especializado en instalaciones para la
               industria alimentaria, donde la presicisión y la higiene no son
               opcionales, sino esenciales.
-            </ContainerTextSecond>
+            </InfoSection>
+          </Container>
+        </AccordionRow>
+      </AccordionWrapper>
+      <AccordionWrapper>
+        <AccordionRow>
+          <Container>
+            <ContainerText>
+              <TitleGrinox>PUESTA EN MARCHA</TitleGrinox>
+              <TextGrinox>
+                Realizamos pruebas, ajustes y validaciones finales para asegurar
+                que el sistema funciona como debe. Acompañamos el arranque de
+                forma controlada, resolviendo desviaciones y dejando el equipo
+                operativo. Entrega orientada a producción: estable, verificable
+                y documentada
+              </TextGrinox>
+            </ContainerText>
+            <Portada src="/img/Imgs/Deposito1.png" alt="Depósito" />
+          </Container>
+        </AccordionRow>
+      </AccordionWrapper>
+      <AccordionWrapper>
+        <AccordionRow>
+          <Container>
+            <Portada src="/img/Imgs/Conexionado.png" alt="Conexionado" />
+            <ContainerTextR>
+              <TitleGrinox>SEGURIDAD Y NORMATIVA</TitleGrinox>
+              <TextGrinox>
+                Trabajamos con procedimientos, señalización y control de riesgos
+                en cada fase del montaje. Priorizamos la seguridad del equipo y
+                el cumplimiento de requisitos en planta, manteniendo orden,
+                limpieza y trazabilidad. Montajes exigentes, con criterio y
+                responsabilidad.
+              </TextGrinox>
+            </ContainerTextR>
           </Container>
         </AccordionRow>
       </AccordionWrapper>
@@ -185,6 +215,16 @@ const ContainerText = styled.div.attrs(() => ({
   border-radius: 8px;
   width: 50%;
 `;
+const ContainerTextR = styled.div.attrs(() => ({
+  "data-fade-right": true,
+}))`
+  margin-top: 3%;
+  margin-right: 15%;
+  color: black;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 50%;
+`;
 const TitleGrinox = styled.h1`
   text-align: center;
   font-weight: 600;
@@ -203,7 +243,7 @@ const Portada = styled.img.attrs(() => ({
   "data-fade-right": true,
 }))`
   object-fit: contain;
-  width: 70%;
+  width: 50%;
   height: 35rem;
   margin-top: 3%;
 `;
@@ -211,7 +251,7 @@ const Portada = styled.img.attrs(() => ({
 const AccordionWrapper = styled.div`
   width: 100%;
   padding: 0 3rem;
-  margin: 4rem 0;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -220,29 +260,31 @@ const AccordionWrapper = styled.div`
 
 const AccordionRow = styled.div`
   display: flex;
-  justify-content: center;
   width: 100%;
 
   &:nth-child(odd) {
-    justify-content: flex-start; /* IZQUIERDA */
+    justify-content: center;
   }
 
   &:nth-child(even) {
-    justify-content: flex-end; /* DERECHA */
+    justify-content: flex-end;
   }
 
   @media (max-width: 900px) {
     justify-content: center;
   }
 `;
-const ContainerTextSecond = styled.div.attrs(() => ({
-  "data-fade-left": true,
-}))`
-  margin-top: 3%;
-  margin-left: 5%;
-  color: black;
-  background-color: #ffffff;
-  border-radius: 8px;
-  width: 50%;
-  padding: 1% 2%;
+const InfoSection = styled.div`
+  margin-top: 5rem;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 60%;
 `;
