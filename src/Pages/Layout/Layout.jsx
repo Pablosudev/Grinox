@@ -1,14 +1,25 @@
 import { Outlet, Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdOutlineMenu } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiMapPin } from "react-icons/hi2";
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 
 export default function Layout() {
+  const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const thresholdPx = window.innerHeight * 0.03;
+      setScrolled(window.scrollY > thresholdPx);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
@@ -18,10 +29,10 @@ export default function Layout() {
             <LogoGrinox src="img/Logos/Grinox.png" alt="LogoGrinox" />
           </Link>
 
-          <ButtonMenu onClick={() => setIsOpen(true)}>
+          <ButtonMenu onClick={() => setIsOpen(true)} $scrolled={scrolled}>
             <LogoMenu />
           </ButtonMenu>
-          <SecondNav>
+          <SecondNav $scrolled={scrolled}>
             <List>
               <StyledLink href="/">INICIO</StyledLink>
               <StyledLink href="/servicios">SERVICIOS</StyledLink>
@@ -32,10 +43,14 @@ export default function Layout() {
             </List>
           </SecondNav>
         </Navbar>
+        {/* Menu Móvil */}
         {isOpen && <Overlay onClick={closeMenu} />}
         <MenuDrop id="menu-drop" $open={isOpen}>
           <StyledLink href="/">
             <TitleDrop>INICIO</TitleDrop>
+          </StyledLink>
+          <StyledLink href="/servicios">
+            <TitleDrop>SERVICIOS</TitleDrop>
           </StyledLink>
           <StyledLink href="/montaje">
             <TitleDrop>MONTAJE</TitleDrop>
@@ -43,9 +58,7 @@ export default function Layout() {
           <StyledLink href="/mantenimiento">
             <TitleDrop>MANTENIMIENTO</TitleDrop>
           </StyledLink>
-          <StyledLink href="/servicios">
-            <TitleDrop>SERVICIOS</TitleDrop>
-          </StyledLink>
+          
           <StyledLink href="/contacto">
             <TitleDrop>CONTACTO</TitleDrop>
           </StyledLink>
@@ -128,14 +141,22 @@ const SecondNav = styled.div`
   display: none;
   @media screen and (min-width: 723px) {
     background-color: #4b4545;
+    opacity: ${({ $scrolled }) => ($scrolled ? 0.6 : 1)};
+    border-radius: 5px;
     display: block;
-    position: absolute;
+    position: fixed;
     width: 70%;
     right: 5%;
-    top: 6%;
+    top: 3vh;
+    transition: top 220ms ease, opacity 180ms ease, background-color 180ms ease;
     padding-top: 2%;
     padding-bottom: 2%;
-    z-index: 1;
+    z-index: 9999;
+    &:hover {
+      opacity: 1;
+    }
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 `;
 const LogoGrinox = styled.img`
@@ -149,13 +170,21 @@ const LogoMenu = styled(MdOutlineMenu)`
   height: 1.2rem;
 `;
 const ButtonMenu = styled.button`
+  position: fixed;
   height: 2.2rem;
   width: 2.2rem;
+  right: 5%;
   background-color: #447aab;
+  opacity: ${({ $scrolled }) => ($scrolled ? 0.8 : 1)};
+  transition: top 220ms ease, opacity 180ms ease, background-color 180ms ease;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  &:hover{
+    opacity: 1;
+  }
   @media screen and (min-width: 723px) {
     display: none;
   }
@@ -210,7 +239,7 @@ const FooterColumns = styled.div`
       align-items: center;
       gap: 0.8rem;
       color: white;
-      font-size: 2rem;
+      font-size: 1.7rem;
       margin-left: 5%;
       margin-bottom: 1rem;
       font-weight: 400;
@@ -256,11 +285,14 @@ const UbiInfo = styled.p`
 const MenuDrop = styled.div`
   position: fixed;
   top: 10%;
-  width: 100%;
+  height: auto;
+  width: 70%;
+  right: 0%;
   padding-bottom: 5%;
   background: #447aab;
   border-radius: 12px;
   padding: 12px 16px;
+  padding-bottom: 40%;
   box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.35);
   z-index: 10;
   transform: translateY(${({ $open }) => ($open ? "0" : "-10px")});
@@ -320,6 +352,13 @@ const FooterBack = styled.img`
   position: absolute;
   object-fit: cover;
 `;
-const UbiLogo = styled(HiMapPin)``;
-const MailLogo = styled(IoIosMail)``;
-const PhoneLogo = styled(FaPhoneAlt)``;
+const UbiLogo = styled(HiMapPin)`
+  font-size: 2.3rem;
+  margin-bottom: 15%;
+`;
+const MailLogo = styled(IoIosMail)`
+  font-size: 2.3rem;
+`;
+const PhoneLogo = styled(FaPhoneAlt)`
+  font-size: 2.3rem;
+`;
