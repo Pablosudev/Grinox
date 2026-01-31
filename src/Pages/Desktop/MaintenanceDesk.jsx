@@ -117,7 +117,8 @@ const ContainerTriangle = styled.div`
   text-align: right;
   color: white;
 
-  @media (max-width: 1024px) {
+  
+  @media (max-width: 1300px) {
     right: 8%;
   }
 
@@ -145,6 +146,12 @@ const TitleTriangle = styled.div`
   font-size: 1.7rem;
   margin-bottom: 1rem;
   text-align: center;
+  @media(max-width:1300px){
+    font-size: 1rem;
+  }
+  @media(max-width:989px){
+    font-size: 0.9rem;
+  }
 `;
 
 const TextTriangle = styled.p`
@@ -152,6 +159,12 @@ const TextTriangle = styled.p`
   line-height: 1.6;
   margin: 0;
   text-align: center;
+  @media(max-width:1300px){
+    font-size: 0.9rem;
+  }
+   @media(max-width:989px){
+    font-size: 0.8rem;
+  }
 `;
 const Negrita = styled.b`
   color: black;

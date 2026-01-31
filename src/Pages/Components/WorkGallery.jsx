@@ -1,13 +1,5 @@
 import styled from "styled-components";
-
-const images = [
-  { src: "/img/Photos/work6.jpg", alt: "Montaje de tuberías en acero inoxidable" },
-  { src: "/img/Photos/work2.jpg", alt: "Instalación de maquinaria en almazara" },
-  { src: "/img/Photos/work3.jpg", alt: "Estructuras y pasarelas en inox" },
-  { src: "/img/Photos/work4.jpg", alt: "Detalle de soldadura y acabado" },
-  { src: "/img/Photos/work5.jpg", alt: "Depósitos y líneas de proceso" },
-  { src: "/img/Photos/work1.jpg", alt: "Montaje en planta industrial" },
-];
+import images from "../../jsonGalery.json";
 
 export default function WorkGallery() {
   return (
@@ -17,8 +9,8 @@ export default function WorkGallery() {
       <GalleryGrid>
         {images.map((img, i) => (
           <ImageCard key={i} data-fade>
-            <Img src={img.src} alt={img.alt} />
-            <ImgCaption>{img.alt}</ImgCaption>
+            <Img src={img.imagen} alt={img.alt} />
+            <ImgCaption>{img.name}</ImgCaption>
           </ImageCard>
         ))}
       </GalleryGrid>

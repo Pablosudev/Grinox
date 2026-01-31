@@ -93,7 +93,6 @@ export default function HomeDesktop() {
     </HomeDesk>
   );
 }
-// 🎨 ESTILOS
 
 const HomeDesk = styled.div`
   width: 100%;
@@ -141,9 +140,19 @@ const ContainerTriangle = styled.div`
   text-align: right;
   color: white;
 
-  @media (max-width: 1024px) {
-    right: 8%;
+  @media (max-width: 1200px) {
+    right: -3%;
     
+  }
+  @media (max-width: 953px) {
+    right: -6%;
+    
+  }
+   @media (max-width: 843px) {
+    right: -10%;
+  }
+    @media (max-width: 725px) {
+    right: -13%;
   }
 
  
@@ -152,10 +161,12 @@ const ContainerTriangle = styled.div`
 const TextContainer = styled.div`
   max-width: 420px;
 
-  @media (max-width: 768px) {
-    max-width: 85%;
+  @media (max-width: 1200px) {
+    max-width: 65%;
     margin: 0 auto;
   }
+  
+ 
 `;
 
 const TitleTriangle = styled.div`
@@ -170,6 +181,20 @@ const TextTriangle = styled.p`
   line-height: 1.6;
   margin: 0;
   text-align: center;
+
+  /* @media (max-width: 1200px){
+    font-size: 1rem;
+  } */
+   @media (max-width: 1200px) {
+    font-size:1rem;
+    
+  }
+  @media (max-width: 953px) {
+   font-size: 0.9rem; 
+  }
+   @media (max-width: 745px) {
+    
+  }
 `;
 
 const HistorySection = styled.div`

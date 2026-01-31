@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Montaje de tuberías en acero inoxidable","imagen": "/img/Photos/work1.jpg" },
+  { "id": 2, "name":"Instalación de maquianria en almazara","imagen": "/img/Photos/work2.jpg" },
+  { "id": 3, "name":"Estructuras y pasarelas en inox", "imagen": "/img/Photos/work3.jpg" },
+  { "id": 4, "name": "Detalle de soldadura y acabado","imagen": "/img/Photos/work4.jpg" },
+  { "id": 5, "name": "Depósito y líneas de proceso", "imagen": "/img/Photos/work5.jpg" },
+  { "id": 6, "name": "Montaje en planta industrial", "imagen": "/img/Photos/work6.jpg" }
+]

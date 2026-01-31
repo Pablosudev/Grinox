@@ -8,13 +8,13 @@
       {
         "id":2,
         "name": "EQUIPO DE LIMPIEZA GR-200",
-        "data": "Nuestro equipo GR-200 es un equipo de limpieza profesional paradepósitos de cualquier dimensión, fabricado específicamente para adaptarse tanto al tamaño de cada depósito como a las necesidades de nuestros clientes.",
+        "data": "Nuestro equipo GR-200 es un equipo de limpieza profesional para depósitos de cualquier dimensión, fabricado específicamente para adaptarse tanto al tamaño de cada depósito como a las necesidades de nuestros clientes.",
         "imagen": "/img/Imgs/MaquinaLimpieza.png"
     },
       {
         "id":3,
-        "name": "EQUIPO DE LIMPIEZA GR-200",
+        "name": "EQUIPO DE CENTRIFRUGAS",
         "data": "",
-        "imagen": ""
+        "imagen": "/img/Imgs/MaquinaLimpieza2.png"
     }
 ]

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import maquinas from "../../jsonCards.json";
-
+import products from "../../product.json";
 export default function ServiceDesk() {
   return (
     <ContainerServiceDesk>
@@ -30,50 +30,31 @@ export default function ServiceDesk() {
       </ContainerIcons>
       <TitleF>NUESTRAS FABRICACIONES</TitleF>
       <Fabricacion>
-        <CardWrapper>
+        {products.map((req) => {
+          return(
+          <CardWrapper key={req.id}>
           <ContainerProduct>
-            <TitleInside>EQUIPO DE LIMPIEZA GR-200</TitleInside>
+            <TitleInside>{req.name}</TitleInside>
 
-            <ProductImage src="img/Imgs/MaquinaLimpieza.png" alt="GR-200" />
+            <ProductImage src={req.imagen} alt="GR-200" />
 
             <Overlay />
 
             <ProductContent>
               <InfoProduct>
-                Nuestro equipo GR-200 es un equipo de limpieza profesional para
-                depósitos de cualquier dimensión, fabricado específicamente para
-                adaptarse tanto al tamaño de cada depósito como a las
-                necesidades de nuestros clientes.
+                {req.data}
               </InfoProduct>
             </ProductContent>
           </ContainerProduct>
         </CardWrapper>
-        <CardWrapper>
-          <ContainerProduct>
-            <TitleInside>
-              CARRO PARA TRANSPORTES DE SUSTANCIAS QUÍMICAS
-            </TitleInside>
-
-            <ProductImage src="img/Imgs/CarritoDesk.png" alt="GR-200" />
-
-            <Overlay />
-
-            <ProductContent>
-              <InfoProduct>
-                Para garantizar siempre la seguridad de nuestros trabajadores
-                contamos con nuestro carro de trasporte, pensado y diseñado con
-                materiales muy resistentes que hacen de esta tarea algo
-                sencillo, permitiendonos manipular los productos químicos de la
-                empresa Masul, nuestra empresa colaboradora, con gran facilidad.
-              </InfoProduct>
-            </ProductContent>
-          </ContainerProduct>
-        </CardWrapper>
+        )})}
+        
+        
       </Fabricacion>
       <TitleF>MAQUINARIA</TitleF>
       <Products>
         {maquinas.map((maq) => (
-          <CardWrapper>
+          <CardWrapper key={maq.id}>
             <ContainerProduct>
               <TitleInside>{maq.name}</TitleInside>
 
