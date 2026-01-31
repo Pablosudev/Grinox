@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import SliderMachine from "../Components/SliderMachine";
 import SliderContainer from "../Components/SliderContainer";
+import SliderProduct from "../Components/SliderProduct";
 
 export default function Service() {
   return (
@@ -32,7 +33,7 @@ export default function Service() {
         </ContainerLogoFlex>
       </ContainerLogosColumn>
       <div>
-        <DataTitle>FABRICACIONES</DataTitle>
+        {/* <DataTitle>FABRICACIONES</DataTitle>
         <ContainerProduct>
           <ContainerProductFlex>
             <TitleProduct>
@@ -47,10 +48,22 @@ export default function Service() {
             permitiendonos manipular los productos químicos de la empresa Masul,
             nuestra empresa colaboradora, con gran facilidad.
           </DataProduct>
-        </ContainerProduct>
+        </ContainerProduct> */}
+        <TitleMachine>NUESTRAS FABRICACIONES</TitleMachine>
+        <SliderProduct/>
         <TitleMachine>MAQUINARIA PARA ALMAZARAS</TitleMachine>
         <SliderMachine />
-        <TitleMachine>DEPÓSITOS</TitleMachine>
+        <DataTitle>DEPÓSITOS</DataTitle>
+        <ContainerProduct>
+          <Deposit src="img/Imgs/Deposito1.png" alt="" />
+          <DataProductDeposit>
+            Para garantizar siempre la seguridad de nuestros trabajadores
+            contamos con nuestro carro de trasporte, pensado y diseñado con
+            materiales muy resistentes que hacen de esta tarea algo sencillo,
+            permitiendonos manipular los productos químicos de la empresa Masul,
+            nuestra empresa colaboradora, con gran facilidad.
+          </DataProductDeposit>
+        </ContainerProduct>
         <SliderContainer />
       </div>
     </ContainerService>
@@ -136,32 +149,24 @@ const Cross = styled.img`
   width: 6rem;
   z-index: 100;
 `;
-const ContainerProductFlex = styled.div`
-  padding: 3%;
-  margin: 5%;
-  display: flex;
-  width: 100%;
-`;
 const ContainerProduct = styled.div`
   background-color: white;
   border-radius: 8px;
   margin: 5%;
   padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
-const TitleProduct = styled.h1`
-  color: #447aab;
-  font-size: 1.3rem;
-  font-weight: 400;
-  margin-top: 13%;
-`;
-const Product = styled.img`
+const Deposit = styled.img`
   object-fit: contain;
   width: 10rem;
-  transform: rotate(180deg);
   margin-top: 5%;
 `;
-const DataProduct = styled.p`
+const DataProductDeposit = styled.p`
   color: black;
+  text-align: center;
+  margin-top: 5%;
   padding-left: 5%;
   padding-right: 5%;
 `;
@@ -171,9 +176,4 @@ const TitleMachine = styled.h1`
   font-weight: 400;
   text-align: center;
   margin-top: 15%;
-`;
-const ContainerMachine = styled.div`
-  background-color: white;
-  border-radius: 8px;
-  margin: 5%;
 `;

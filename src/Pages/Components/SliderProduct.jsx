@@ -4,8 +4,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styled from "styled-components";
+import productos from "../../product.json";
 
-export default function SliderContainer() {
+export default function SliderProduct() {
   return (
     <SwiperContainer>
       <Swiper
@@ -21,9 +22,22 @@ export default function SliderContainer() {
         pagination={{
           clickable: true,
         }}
-        style={{ marginBottom: "3rem", marginTop: "2rem" }}
+        autoHeight={true}
+        style={{ marginBottom: "4rem", marginTop: "2rem" }}
       >
-        
+        {productos.map((res) => {
+          return (
+            <SwiperSlide>
+              <CardMachine>
+                <ContainerMachine>
+                  <Titleswiper>{res.name}</Titleswiper>
+                  <DataSwiper>{res.data}</DataSwiper>
+                  <ImgProduct src={res.imagen} />
+                </ContainerMachine>
+              </CardMachine>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </SwiperContainer>
   );
@@ -31,7 +45,8 @@ export default function SliderContainer() {
 const ContainerMachine = styled.div`
   background-color: white;
   padding: 5%;
-  padding-top: 15%;
+  padding-top: 10%;
+  border-radius: 8px;
 `;
 const Titleswiper = styled.h1`
   color: #447aab;
@@ -42,18 +57,16 @@ const DataSwiper = styled.p`
   text-align: center;
   padding-left: 5%;
   padding-right: 5%;
+  margin-top: 5%;
   color: black;
 `;
+
 const ImgProduct = styled.img`
-  position: absolute;
-  top: 1%;
-  right: 20%;
-  object-fit:contain;
-  width:8rem;
+  width: 19rem;
 `;
 const CardMachine = styled.div`
   position: relative;
-  padding-top: 40%;
+  padding-top: 10%;
   padding-left: 5%;
   padding-right: 5%;
 `;
@@ -62,8 +75,8 @@ const SwiperContainer = styled.div`
 
   /* ==== Paginación ==== */
   .swiper-pagination {
-    position: relative !important; 
-    margin-top: 2rem;              
+    position: relative !important;
+    margin-top: 2rem;
     text-align: center;
   }
 
@@ -86,4 +99,3 @@ const SwiperContainer = styled.div`
     display: none !important;
   }
 `;
-

@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styled from "styled-components";
+import maquinas from "../../jsonCards.json";
 
 export default function SliderMachine() {
   return (
@@ -23,51 +24,21 @@ export default function SliderMachine() {
         }}
         style={{ marginBottom: "4rem", marginTop: "2rem" }}
       >
-        <SwiperSlide>
-          <CardMachine>
-            <ContainerMachine>
-              <Titleswiper>Molino triturador de aceitunas</Titleswiper>
-              <DataSwiper>
-                Diseñado para garantizar una trituración eficiente y homegénea
-                de las aceitunas, optimizando el rendimiento en la extracción
-                del aceite. Fabricado con materiales de alta resistencia y fácil
-                limpieza, asegura unproceso continuo, higiénico y adapatado a
-                las exigencias de las almazaras modernas.
-              </DataSwiper>
-              <ImgProduct src="img/Imgs/Maquina1.png" />
-            </ContainerMachine>
-          </CardMachine>
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMachine>
-            <ContainerMachine>
-              <Titleswiper>Molino triturador de aceitunas</Titleswiper>
-              <DataSwiper>
-                Diseñado para garantizar una trituración eficiente y homegénea
-                de las aceitunas, optimizando el rendimiento en la extracción
-                del aceite. Fabricado con materiales de alta resistencia y fácil
-                limpieza, asegura unproceso continuo, higiénico y adapatado a
-                las exigencias de las almazaras modernas.
-              </DataSwiper>
-              <ImgProduct src="img/Imgs/Maquina1.png" />
-            </ContainerMachine>
-          </CardMachine>
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMachine>
-            <ContainerMachine>
-              <Titleswiper>Molino triturador de aceitunas</Titleswiper>
-              <DataSwiper>
-                Diseñado para garantizar una trituración eficiente y homegénea
-                de las aceitunas, optimizando el rendimiento en la extracción
-                del aceite. Fabricado con materiales de alta resistencia y fácil
-                limpieza, asegura unproceso continuo, higiénico y adapatado a
-                las exigencias de las almazaras modernas.
-              </DataSwiper>
-              <ImgProduct src="img/Imgs/Maquina1.png" />
-            </ContainerMachine>
-          </CardMachine>
-        </SwiperSlide>
+        {maquinas.map((res) => {
+          return (
+            <SwiperSlide>
+              <CardMachine>
+                <ContainerMachine>
+                  <Titleswiper>{res.name}</Titleswiper>
+                  <DataSwiper>{res.info}</DataSwiper>
+                    <ImgProduct src={res.imagen} />
+                </ContainerMachine>
+              </CardMachine>
+            </SwiperSlide>
+          );
+        })}
+    
+      
       </Swiper>
     </SwiperContainer>
   );
@@ -75,7 +46,8 @@ export default function SliderMachine() {
 const ContainerMachine = styled.div`
   background-color: white;
   padding: 5%;
-  padding-top: 15%;
+  padding-top: 10%;
+  border-radius: 8px;
 `;
 const Titleswiper = styled.h1`
   color: #447aab;
@@ -86,12 +58,15 @@ const DataSwiper = styled.p`
   text-align: center;
   padding-left: 5%;
   padding-right: 5%;
+  margin-top: 5%;
   color: black;
 `;
+
 const ImgProduct = styled.img`
+  width: 19rem;
   position: absolute;
   top: 1%;
-  left: 25%;
+  right: 2%;
 `;
 const CardMachine = styled.div`
   position: relative;
@@ -104,8 +79,8 @@ const SwiperContainer = styled.div`
 
   /* ==== Paginación ==== */
   .swiper-pagination {
-    position: relative !important; 
-    margin-top: 2rem;              
+    position: relative !important;
+    margin-top: 2rem;
     text-align: center;
   }
 
@@ -128,4 +103,3 @@ const SwiperContainer = styled.div`
     display: none !important;
   }
 `;
-

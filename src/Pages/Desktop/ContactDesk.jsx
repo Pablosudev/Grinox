@@ -1,9 +1,47 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 export default function ContactDesk() {
-  const handleSubmit = (e) => {
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
+
+  async function handleSubmit(e) {
     e.preventDefault();
-  };
+
+    const payload = {
+      name,
+      company,
+      email,
+      phone,
+      message,
+      website,
+    };
+
+    const res = await fetch("/api/contact.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json().catch(() => null);
+
+    if (!res.ok || !data?.ok) {
+      alert("Error al enviar el mensaje. Inténtalo de nuevo.");
+      return;
+    }
+
+    alert("Mensaje enviado correctamente.");
+    setName("");
+    setCompany("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+    setWebsite("");
+  }
 
   return (
     <ContainerContact>
@@ -19,22 +57,38 @@ export default function ContactDesk() {
           </HeaderGroup>
 
           <Form onSubmit={handleSubmit} autoComplete="off">
+            {/* Honeypot */}
+            <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                type="text"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <Row>
               <Field>
                 <Label>Nombre y apellidos</Label>
                 <Input
                   type="text"
-                  name="fullName"
                   placeholder="Ej. Carlos García López"
                   required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </Field>
+
               <Field>
                 <Label>Empresa</Label>
                 <Input
                   type="text"
-                  name="company"
                   placeholder="Nombre de tu empresa"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
                 />
               </Field>
             </Row>
@@ -42,15 +96,22 @@ export default function ContactDesk() {
             <Row>
               <Field>
                 <Label>Teléfono</Label>
-                <Input type="tel" name="phone" placeholder="+34 600 000 000" />
+                <Input
+                  type="tel"
+                  placeholder="+34 600 000 000"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
               </Field>
+
               <Field>
                 <Label>Email</Label>
                 <Input
                   type="email"
-                  name="email"
                   placeholder="tucorreo@empresa.com"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Field>
             </Row>
@@ -58,10 +119,11 @@ export default function ContactDesk() {
             <Field>
               <Label>Mensaje</Label>
               <TextArea
-                name="message"
                 rows={4}
                 placeholder="Cuéntanos brevemente qué necesitas…"
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </Field>
 
@@ -70,7 +132,9 @@ export default function ContactDesk() {
                 Cuidamos tus datos. Solo los usaremos para responder a tu
                 consulta.
               </InfoText>
-              <SubmitButton type="submit">Enviar mensaje</SubmitButton>
+              <SubmitButton type="submit">
+                Enviar mensaje
+              </SubmitButton>
             </FooterRow>
           </Form>
         </FormCard>
@@ -80,7 +144,7 @@ export default function ContactDesk() {
 }
 
 const ContainerContact = styled.div`
-width: 100%;
+  width: 100%;
   min-height: 100vh;
   background-image: url("/img/Backgrounds/fondoGear.png");
   background-repeat: repeat;
@@ -90,11 +154,10 @@ width: 100%;
   position: relative;
   z-index: 0;
   padding-bottom: 5%;
-   @media screen and (max-width: 723px){
+  @media screen and (max-width: 723px) {
     display: none;
   }
 `;
-
 
 const ContentWrapper = styled.div`
   position: relative;
@@ -105,15 +168,16 @@ const ContentWrapper = styled.div`
 `;
 
 const FormCard = styled.div`
-    width: 100%;
+  width: 100%;
   max-width: 900px;
   padding: 3rem clamp(2rem, 4vw, 3.5rem);
   margin-top: 8%;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: radial-gradient(circle at top left,
-      rgba(15, 52, 92, 0.98),
-      rgba(5, 26, 54, 0.98)
+  background: radial-gradient(
+    circle at top left,
+    rgba(15, 52, 92, 0.98),
+    rgba(5, 26, 54, 0.98)
   );
   backdrop-filter: blur(14px);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
@@ -194,7 +258,10 @@ const Input = styled.input`
   font-size: 0.95rem;
   color: #f5f8ff;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 
   &::placeholder {
     color: rgba(196, 208, 235, 0.55);
@@ -217,7 +284,10 @@ const TextArea = styled.textarea`
   outline: none;
   resize: vertical;
   min-height: 160px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 
   &::placeholder {
     color: rgba(196, 208, 235, 0.55);
@@ -258,7 +328,10 @@ const SubmitButton = styled.button`
   background: linear-gradient(135deg, #63b32e, #00a6d6);
   box-shadow: 0 16px 40px rgba(0, 166, 214, 0.45);
   transform-origin: center;
-  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    filter 0.16s ease;
 
   &:hover {
     transform: translateY(-1px) scale(1.01);

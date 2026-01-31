@@ -54,7 +54,7 @@ export default function ServiceDesk() {
               CARRO PARA TRANSPORTES DE SUSTANCIAS QUÍMICAS
             </TitleInside>
 
-            <ProductImage src="img/Imgs/Carrito.png" alt="GR-200" />
+            <ProductImage src="img/Imgs/CarritoDesk.png" alt="GR-200" />
 
             <Overlay />
 

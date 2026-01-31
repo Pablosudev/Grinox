@@ -143,16 +143,10 @@ const ContainerTriangle = styled.div`
 
   @media (max-width: 1024px) {
     right: 8%;
+    
   }
 
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    text-align: center;
-    color: white;
-    margin: 2rem auto;
-    width: 90%;
-  }
+ 
 `;
 
 const TextContainer = styled.div`

@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "name": "CARRO PARA TRANSPORTE DE SUSTANCIAS QUÍMICAS",
+        "data": "Para garantizar siempre la seguridad de nuestros trabajadores contamos con nuestro carro de trasporte, pensado y diseñado con materiales muy resistentes que hacen de esta tarea algo sencillo, permitiendonos manipular los productos químicos de la empresa Masul, nuestra empresa colaboradora, con gran facilidad.",
+        "imagen": "/img/Imgs/Carrito.png"
+    },
+      {
+        "id":2,
+        "name": "EQUIPO DE LIMPIEZA GR-200",
+        "data": "Nuestro equipo GR-200 es un equipo de limpieza profesional paradepósitos de cualquier dimensión, fabricado específicamente para adaptarse tanto al tamaño de cada depósito como a las necesidades de nuestros clientes.",
+        "imagen": "/img/Imgs/MaquinaLimpieza.png"
+    },
+      {
+        "id":3,
+        "name": "EQUIPO DE LIMPIEZA GR-200",
+        "data": "",
+        "imagen": ""
+    }
+]

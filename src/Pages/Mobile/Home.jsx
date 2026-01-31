@@ -76,7 +76,8 @@ const ContainerText = styled.div`
   color: black;
   background-color: white;
   width: 100%;
-  padding: 2%;
+  padding: 5% 3%;
+  border-radius: 8px;
   text-align: center;
 `;
 const ContainerSecond = styled.div`

@@ -10,6 +10,7 @@ export default function Layout() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
+  const togleMenu = () => setIsOpen(prev => !prev);
 
   useEffect(() => {
     const onScroll = () => {
@@ -45,7 +46,7 @@ export default function Layout() {
         </Navbar>
         {/* Menu Móvil */}
         {isOpen && <Overlay onClick={closeMenu} />}
-        <MenuDrop id="menu-drop" $open={isOpen}>
+        <MenuDrop id="menu-drop" $open={isOpen}  onClick={(isOpen) => false} >
           <StyledLink href="/">
             <TitleDrop>INICIO</TitleDrop>
           </StyledLink>
@@ -292,9 +293,9 @@ const MenuDrop = styled.div`
   background: #447aab;
   border-radius: 12px;
   padding: 12px 16px;
-  padding-bottom: 40%;
+  padding-bottom: 10%;
   box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.35);
-  z-index: 10;
+  z-index: 999;
   transform: translateY(${({ $open }) => ($open ? "0" : "-10px")});
   opacity: ${({ $open }) => ($open ? 1 : 0)};
   pointer-events: ${({ $open }) => ($open ? "auto" : "none")};
@@ -310,7 +311,7 @@ const TitleDrop = styled.h1`
   font-size: 1rem;
   font-weight: 200;
   text-align: center;
-  margin-top: 4%;
+  margin-top: 10%;
 `;
 const StyledLink = styled.a`
   text-decoration: none;
