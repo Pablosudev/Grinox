@@ -9,7 +9,7 @@ export default function ContactDesk() {
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const payload = {
@@ -18,30 +18,29 @@ export default function ContactDesk() {
       email,
       phone,
       message,
-      website,
     };
 
-    const res = await fetch("/api/contact.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    const data = await res.json().catch(() => null);
+      const data = await response.json(); // Leer la respuesta JSON del servidor
 
-    if (!res.ok || !data?.ok) {
-      alert("Error al enviar el mensaje. Inténtalo de nuevo.");
-      return;
+      if (response.ok) {
+        // Si la respuesta fue exitosa, mostramos el mensaje de éxito
+        alert("¡Mensaje enviado con éxito!");
+      } else {
+        // Si hubo algún error, mostramos el mensaje del servidor
+        alert(`Hubo un error: ${data.message || "Inténtalo de nuevo."}`);
+      }
+    } catch (error) {
+      // Si ocurrió un error en la conexión, mostramos un mensaje genérico
+      alert("Error al conectar con el servidor. Inténtalo de nuevo.");
     }
-
-    alert("Mensaje enviado correctamente.");
-    setName("");
-    setCompany("");
-    setEmail("");
-    setPhone("");
-    setMessage("");
-    setWebsite("");
-  }
+  };
 
   return (
     <ContainerContact>
@@ -58,7 +57,10 @@ export default function ContactDesk() {
 
           <Form onSubmit={handleSubmit} autoComplete="off">
             {/* Honeypot */}
-            <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+            <div
+              style={{ position: "absolute", left: "-9999px" }}
+              aria-hidden="true"
+            >
               <label htmlFor="website">Website</label>
               <input
                 id="website"
@@ -132,9 +134,7 @@ export default function ContactDesk() {
                 Cuidamos tus datos. Solo los usaremos para responder a tu
                 consulta.
               </InfoText>
-              <SubmitButton type="submit">
-                Enviar mensaje
-              </SubmitButton>
+              <SubmitButton type="submit">Enviar mensaje</SubmitButton>
             </FooterRow>
           </Form>
         </FormCard>
