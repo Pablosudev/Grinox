@@ -8,37 +8,72 @@ export default function ContactDesk() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = {
-      name,
-      company,
-      email,
-      phone,
-      message,
-    };
+    // Si el honeypot está lleno, es un bot
+    if (website) {
+      console.log("🤖 Bot detectado");
+      return;
+    }
+
+    setLoading(true);
+    setResponse(null);
 
     try {
+      // Crear el objeto formData con los estados individuales
+      const formData = {
+        name,
+        company,
+        email,
+        phone,
+        message
+      };
+
+      console.log("📨 Enviando datos:", formData);
+
       const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
-      const data = await response.json(); // Leer la respuesta JSON del servidor
+      const data = await response.json();
 
       if (response.ok) {
-        // Si la respuesta fue exitosa, mostramos el mensaje de éxito
-        alert("¡Mensaje enviado con éxito!");
+        console.log("✅ Éxito:", data.message);
+        setResponse({
+          type: "success",
+          message: "¡Formulario enviado con éxito! Te contactaremos pronto."
+        });
+        
+        // Limpiar el formulario
+        setName("");
+        setCompany("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        setWebsite("");
       } else {
-        // Si hubo algún error, mostramos el mensaje del servidor
-        alert(`Hubo un error: ${data.message || "Inténtalo de nuevo."}`);
+        console.log("❌ Error:", data.message);
+        setResponse({
+          type: "error",
+          message: data.message || "Error al enviar el formulario"
+        });
       }
     } catch (error) {
-      // Si ocurrió un error en la conexión, mostramos un mensaje genérico
-      alert("Error al conectar con el servidor. Inténtalo de nuevo.");
+      console.error("❌ Error de conexión:", error);
+      setResponse({
+        type: "error",
+        message: "No se pudo conectar con el servidor. ¿Está el backend corriendo?"
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,6 +89,12 @@ export default function ContactDesk() {
               posible.
             </Subtitle>
           </HeaderGroup>
+
+          {response && (
+            <ResponseMessage type={response.type}>
+              {response.message}
+            </ResponseMessage>
+          )}
 
           <Form onSubmit={handleSubmit} autoComplete="off">
             {/* Honeypot */}
@@ -81,6 +122,7 @@ export default function ContactDesk() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  disabled={loading}
                 />
               </Field>
 
@@ -91,6 +133,7 @@ export default function ContactDesk() {
                   placeholder="Nombre de tu empresa"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
+                  disabled={loading}
                 />
               </Field>
             </Row>
@@ -103,6 +146,7 @@ export default function ContactDesk() {
                   placeholder="+34 600 000 000"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
+                  disabled={loading}
                 />
               </Field>
 
@@ -114,6 +158,7 @@ export default function ContactDesk() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  disabled={loading}
                 />
               </Field>
             </Row>
@@ -126,6 +171,7 @@ export default function ContactDesk() {
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                disabled={loading}
               />
             </Field>
 
@@ -134,7 +180,9 @@ export default function ContactDesk() {
                 Cuidamos tus datos. Solo los usaremos para responder a tu
                 consulta.
               </InfoText>
-              <SubmitButton type="submit">Enviar mensaje</SubmitButton>
+              <SubmitButton type="submit" disabled={loading}>
+                {loading ? "Enviando..." : "Enviar mensaje"}
+              </SubmitButton>
             </FooterRow>
           </Form>
         </FormCard>
@@ -142,6 +190,23 @@ export default function ContactDesk() {
     </ContainerContact>
   );
 }
+
+// Añadir estilos para el mensaje de respuesta
+const ResponseMessage = styled.div`
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: ${props => props.type === "success" 
+    ? "rgba(99, 179, 46, 0.2)" 
+    : "rgba(255, 87, 87, 0.2)"};
+  border: 1px solid ${props => props.type === "success" 
+    ? "rgba(99, 179, 46, 0.5)" 
+    : "rgba(255, 87, 87, 0.5)"};
+  color: ${props => props.type === "success" 
+    ? "#c6ffdd" 
+    : "#ffb3b3"};
+`;
 
 const ContainerContact = styled.div`
   width: 100%;
@@ -272,6 +337,11 @@ const Input = styled.input`
     box-shadow: 0 0 0 1px rgba(0, 166, 214, 0.7);
     background: rgba(10, 25, 55, 0.95);
   }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -297,6 +367,11 @@ const TextArea = styled.textarea`
     border-color: rgba(0, 166, 214, 0.9);
     box-shadow: 0 0 0 1px rgba(99, 179, 46, 0.7);
     background: rgba(10, 25, 55, 0.95);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `;
 
@@ -333,14 +408,20 @@ const SubmitButton = styled.button`
     box-shadow 0.16s ease,
     filter 0.16s ease;
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: translateY(-1px) scale(1.01);
     box-shadow: 0 22px 46px rgba(0, 166, 214, 0.55);
     filter: brightness(1.03);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     transform: translateY(1px) scale(0.99);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(30%);
   }
 `;
