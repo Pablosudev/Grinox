@@ -11,19 +11,10 @@ export default function Contact() {
       <Data>Hemos realizado intervenciones por todo el mundo.</Data>
       <ImgMap src="img/Imgs/Map.png" />
       <TitleWorkSecond>
-        HABLEMOS SOBRE TU ISNTALACIÓN. <br /> SOLICITA TU PRESUPUESTO SIN
+        HABLEMOS SOBRE TU INSTALACIÓN. <br /> SOLICITA TU PRESUPUESTO SIN
         COMPROMISO.
       </TitleWorkSecond>
-      <ContainerInput>
-        <TitleLabel htmlFor="">NOMBRE</TitleLabel>
-        <InputBox type="text" />
-        <TitleLabel htmlFor="">TELÉFONO</TitleLabel>
-        <InputBox type="text" />
-        <TitleLabel htmlFor="">CONSULTA</TitleLabel>
-        <InputBig type="text" />
-        <Gear src="img/Imgs/GearL.png" />
-      </ContainerInput>
-      <ButtonSend>ENVIAR</ButtonSend>
+   
     </ContainerContact>
   );
 }

@@ -40,7 +40,6 @@ export default function Layout() {
               <StyledLink href="/montaje">MONTAJE</StyledLink>
               <StyledLink href="/mantenimiento">MANTENIMIENTO</StyledLink>
               <StyledLink href="/contacto">CONTACTO</StyledLink>
-              {/* <GrinoxImg src="img/Logos/GR.png"/> */}
             </List>
           </SecondNav>
         </Navbar>
@@ -85,7 +84,6 @@ export default function Layout() {
           </UbiInfo>
         </Footer>
         <FooterDesk>
-          <FooterBack src="img/Backgrounds/olivo.png" />
 
           <TitleFooter>
             Intervenimos en todo el mundo. ¿Hablamos de tu proyecto?
@@ -224,12 +222,15 @@ const TitleFooter = styled.h1`
 const FooterInfo = styled.div`
   display: flex;
   justify-content: space-around;
-  padding-top: 5%;
+  padding-top: 1%;
 `;
 const FooterColumns = styled.div`
   position: relative;
   z-index: 2;
-
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
   ul {
     list-style: none;
     padding: 0;
@@ -239,8 +240,7 @@ const FooterColumns = styled.div`
       display: flex;
       align-items: center;
       gap: 0.8rem;
-      color: white;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       margin-left: 5%;
       margin-bottom: 1rem;
       font-weight: 400;
@@ -316,7 +316,7 @@ const TitleDrop = styled.h1`
 const StyledLink = styled.a`
   text-decoration: none;
   color: inherit;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
 
@@ -330,7 +330,13 @@ const List = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+  }
+  @media screen and (min-width: 523px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.6rem;
   }
 `;
 const GrinoxImg = styled.img`
@@ -343,23 +349,21 @@ const FooterDesk = styled.div`
   display: none;
   @media screen and (min-width: 723px) {
     display: block;
+    background-image: url("img/Backgrounds/olivo.png");
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 2%;
+
   }
 `;
-const FooterBack = styled.img`
-  background-position: center;
-  background-size: cover;
-  min-width: 100%;
-  height: 75vh;
-  position: absolute;
-  object-fit: cover;
-`;
+
 const UbiLogo = styled(HiMapPin)`
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   margin-bottom: 15%;
 `;
 const MailLogo = styled(IoIosMail)`
-  font-size: 2.3rem;
+  font-size: 1.5rem;
 `;
 const PhoneLogo = styled(FaPhoneAlt)`
-  font-size: 2.3rem;
+  font-size: 1.5rem;
 `;

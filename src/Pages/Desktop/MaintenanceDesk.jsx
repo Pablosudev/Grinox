@@ -46,16 +46,14 @@ export default function MaintenanceDesktop() {
         </AccordionRow>
       </AccordionWrapper>
       <CardsMaintenance />
-      <Title>BENEFICIOS DE HACERLO CON <b style={{color:"#447aab"}}>GRINOX</b></Title>
+      <Title>
+        BENEFICIOS DE HACERLO CON <b style={{ color: "#447aab" }}>GRINOX</b>
+      </Title>
 
       <ListContainer>
-         <List>
-          <ListItem>
-            TÉCNICOS ESPECIALIZADOS EN ENTORNOS ALIMENTARIOS.
-          </ListItem>
-          <ListItem>
-            CUMPLIMIENTO CON NORMATIVAS.
-          </ListItem>
+        <List>
+          <ListItem>TÉCNICOS ESPECIALIZADOS EN ENTORNOS ALIMENTARIOS.</ListItem>
+          <ListItem>CUMPLIMIENTO CON NORMATIVAS.</ListItem>
           <ListItem>
             DESMONTAJE DE MAQUINARIA Y EQUIPOS DE GRAN ESCALA.
           </ListItem>
@@ -65,7 +63,7 @@ export default function MaintenanceDesktop() {
           <ListItem>INSTALACIÓN DE MAQUINARIA EN GENERAL.</ListItem>
           <ListItem>CONSTRUCCIÓN DE GRANDES DEPÓSITOS.</ListItem>
         </List>
-        <Logo src="img/Logos/GR.png"/>
+        <Logo src="img/Logos/GR.png" />
       </ListContainer>
     </MainDesk>
   );
@@ -82,7 +80,7 @@ const MainDesk = styled.div`
   position: relative;
   z-index: 0;
   padding-bottom: 5%;
-     @media screen and (max-width: 723px){
+  @media screen and (max-width: 723px) {
     display: none;
   }
 `;
@@ -117,18 +115,20 @@ const ContainerTriangle = styled.div`
   text-align: right;
   color: white;
 
-  
   @media (max-width: 1300px) {
     right: 8%;
   }
-
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    text-align: center;
-    color: white;
-    margin: 2rem auto;
-    width: 90%;
+  @media (max-width: 1200px) {
+    right: 9%;
+  }
+  @media (max-width: 953px) {
+    right: 4%;
+  }
+  @media (max-width: 843px) {
+    right: 4%;
+  }
+  @media (max-width: 773px) {
+    right: 2%;
   }
 `;
 
@@ -136,8 +136,19 @@ const TextContainer = styled.div`
   max-width: 420px;
 
   @media (max-width: 768px) {
-    max-width: 85%;
     margin: 0 auto;
+        padding-top: 30%;
+
+  }
+  @media (max-width: 1013px) {
+    margin: 0 auto;
+        padding-top: 30%;
+
+  }
+
+  @media (max-width: 789px) {
+    font-size: 0.7rem;
+    padding-top: 30%;
   }
 `;
 
@@ -146,11 +157,14 @@ const TitleTriangle = styled.div`
   font-size: 1.7rem;
   margin-bottom: 1rem;
   text-align: center;
-  @media(max-width:1300px){
+  @media (max-width: 1300px) {
     font-size: 1rem;
   }
-  @media(max-width:989px){
+  @media (max-width: 989px) {
     font-size: 0.9rem;
+  }
+  @media (max-width: 781px) {
+    font-size: 0.7rem;
   }
 `;
 
@@ -159,10 +173,10 @@ const TextTriangle = styled.p`
   line-height: 1.6;
   margin: 0;
   text-align: center;
-  @media(max-width:1300px){
+  @media (max-width: 1300px) {
     font-size: 0.9rem;
   }
-   @media(max-width:989px){
+  @media (max-width: 989px) {
     font-size: 0.8rem;
   }
 `;
@@ -243,17 +257,16 @@ const Title = styled.h1.attrs(() => ({
   margin-left: 5%;
   width: 30%;
   margin-top: 5%;
-  margin-bottom:5%;
+  margin-bottom: 5%;
   text-align: center;
-
 `;
 
 const Logo = styled.img`
-width: 7rem;
-margin-left: 2%;
-position:absolute;
-right: 5%;
-bottom: 3%;
+  width: 7rem;
+  margin-left: 2%;
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
 `;
 const ListContainer = styled.div.attrs(() => ({
   "data-fade-right": true,
@@ -267,8 +280,6 @@ const ListContainer = styled.div.attrs(() => ({
   margin-bottom: 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   border-left: 6px solid #447aab;
-  position: relative;
-  left:25%;
 `;
 
 const List = styled.ul`

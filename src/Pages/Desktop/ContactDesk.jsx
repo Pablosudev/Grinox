@@ -35,7 +35,7 @@ export default function ContactDesk() {
 
       console.log("📨 Enviando datos:", formData);
 
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ export default function ContactDesk() {
       console.error("❌ Error de conexión:", error);
       setResponse({
         type: "error",
-        message: "No se pudo conectar con el servidor. ¿Está el backend corriendo?"
+        message: "No se pudo enviar el formulario"
       });
     } finally {
       setLoading(false);

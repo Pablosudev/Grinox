@@ -17,6 +17,7 @@ export default function MountingDesk() {
           </TextContainer>
         </ContainerTriangle>
       </ContainerFirst>
+      
       <CardsMounting />
       <AccordionWrapper>
         <AccordionRow>
@@ -91,14 +92,14 @@ export default function MountingDesk() {
                 y documentada
               </TextGrinox>
             </ContainerText>
-            <Portada src="/img/Imgs/Deposito1.png" alt="Depósito" />
+            <Portada src="/img/Photos/Trabajador2.png" alt="Trabajador" />
           </Container>
         </AccordionRow>
       </AccordionWrapper>
       <AccordionWrapper>
         <AccordionRow>
           <Container>
-            <Portada src="/img/Imgs/Conexionado.png" alt="Conexionado" />
+            <Portada src="/img/Photos/totem.png" alt="Conexionado" />
             <ContainerTextR>
               <TitleGrinox>SEGURIDAD Y NORMATIVA</TitleGrinox>
               <TextGrinox>
@@ -161,18 +162,21 @@ const ContainerTriangle = styled.div`
   text-align: right;
   color: white;
 
-  @media (max-width: 1024px) {
-    right: 8%;
+   @media (max-width: 1200px) {
+    right: 9%;
+    
+  }
+  @media (max-width: 953px) {
+    right: 4%;
+    
+  }
+   @media (max-width: 843px) {
+    right: 4%;
+  }
+    @media (max-width: 772px) {
+    right: 5%;
   }
 
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    text-align: center;
-    color: white;
-    margin: 2rem auto;
-    width: 90%;
-  }
 `;
 
 const TextContainer = styled.div`
@@ -189,6 +193,14 @@ const TitleTriangle = styled.div`
   font-size: 1.7rem;
   margin-bottom: 1rem;
   text-align: center;
+
+    @media (max-width: 953px) {
+        font-size: 1rem;
+
+  }
+  @media (max-width: 843px) {
+    font-size: 1rem;
+  }
 `;
 
 const TextTriangle = styled.p`
@@ -196,6 +208,10 @@ const TextTriangle = styled.p`
   line-height: 1.6;
   margin: 0;
   text-align: center;
+    @media (max-width: 772px) {
+  font-size: 0.9rem;
+  width: 300px;
+  }
 `;
 const Negrita = styled.b`
   color: black;
@@ -246,6 +262,7 @@ const Portada = styled.img.attrs(() => ({
   width: 50%;
   height: 35rem;
   margin-top: 3%;
+  border-radius: 8px;
 `;
 
 const AccordionWrapper = styled.div`
