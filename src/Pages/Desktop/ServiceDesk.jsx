@@ -7,7 +7,7 @@ import "./ServiceDesk.css";
 const fabricationCopy = {
   1: { title: "Carro para transporte de sustancias químicas", text: "Un carro diseñado para facilitar el transporte y la manipulación de los productos químicos utilizados en la instalación." },
   2: { title: "Equipo de limpieza GR-200", text: "Limpieza profesional de depósitos con un equipo fabricado para adaptarse a sus dimensiones y a las necesidades de cada cliente." },
-  3: { title: "Equipo de centrífugas", text: "Cuéntanos las necesidades de tu instalación y consulta con nuestro equipo las características y opciones disponibles." },
+  3: { title: "Equipo de centrífugas", text: "Equipo diseñado para integrarse en la línea de proceso de una almazara y facilitar la separación de las distintas fases durante la elaboración del aceite. Adaptamos su configuración, montaje y conexionado a las necesidades de cada instalación." },
 };
 
 function sentenceCase(text) {
