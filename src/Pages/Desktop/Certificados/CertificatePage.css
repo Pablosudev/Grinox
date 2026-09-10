@@ -45,6 +45,10 @@
   .certificate-page .pdf-toolbar { gap: 12px; }
 }
 @media (max-width: 600px) {
+  .certificate-page .certificate-container { width: calc(100% - 40px); }
+  .certificate-page .certificate-breadcrumb { margin-bottom: 24px; font-size: 10px; }
+  .certificate-page .certificate-eyebrow { font-size: 9px; letter-spacing: .14em; }
+  .certificate-page h1 { font-size: 36px; }
   .certificate-page .certificate-badge { display: none; }
   .certificate-page .certificate-intro { padding-bottom: 30px; }
   .certificate-page .certificate-content { padding-block: 25px 35px; }
@@ -54,6 +58,6 @@
   .certificate-page .pdf-control-group { gap: 3px; }
   .certificate-page .pdf-control-group button { width: 32px; height: 36px; }
   .certificate-page .pdf-page-count, .certificate-page .pdf-zoom { min-width: 44px; }
-  .certificate-page .pdf-stage { padding: 12px; min-height: 320px; }
+  .certificate-page .pdf-stage { padding: 10px; min-height: 320px; height: 72svh; }
   .certificate-page .certificate-help, .certificate-page .certificate-related > div { flex-direction: column; align-items: flex-start; gap: 18px; }
 }

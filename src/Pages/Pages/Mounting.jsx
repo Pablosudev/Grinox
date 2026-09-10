@@ -1,13 +1,5 @@
-import MountingDesk from "../Desktop/MountingDesk"
-import Mounting from "../Mobile/Mounting"
+import MountingDesk from "../Desktop/MountingDesk";
 
-export default function MountingPage(){
-
-
-    return(
-        <>
-        <Mounting/>
-        <MountingDesk/>
-        </>
-    )
+export default function MountingPage() {
+  return <MountingDesk />;
 }

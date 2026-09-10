@@ -92,5 +92,40 @@
   .desktop-maintenance .maintenance-phones { grid-template-columns: 1fr 1fr; }
   .desktop-maintenance .maintenance-phones span { font-size: 20px; }
 }
-@media (width < 723px) { .desktop-maintenance { display: none; } }
+@media (max-width: 722px) {
+  .desktop-maintenance .maintenance-container { width: calc(100% - 40px); }
+  .desktop-maintenance .maintenance-hero-grid { grid-template-columns: 1fr; gap: 34px; padding-block: 22px 40px; }
+  .desktop-maintenance .maintenance-breadcrumb { margin-bottom: 38px; font-size: 10px; }
+  .desktop-maintenance .maintenance-eyebrow { margin-bottom: 14px; font-size: 9px; letter-spacing: .14em; }
+  .desktop-maintenance h1 { font-size: clamp(38px, 11.5vw, 48px); line-height: 1.1; }
+  .desktop-maintenance .maintenance-lead { margin-top: 20px; font-size: 13px; line-height: 1.8; }
+  .desktop-maintenance .maintenance-actions { align-items: stretch; flex-direction: column; gap: 20px; margin-top: 28px; }
+  .desktop-maintenance .maintenance-button { width: 100%; min-height: 52px; padding: 15px 18px; }
+  .desktop-maintenance .maintenance-actions .maintenance-link { justify-content: space-between; }
+  .desktop-maintenance .maintenance-hero-photo { min-height: 345px; }
+  .desktop-maintenance .maintenance-hero-photo > img { height: calc(100% - 92px); }
+  .desktop-maintenance .maintenance-hero-photo figcaption { bottom: 14px; left: 14px; right: 14px; padding: 16px; }
+  .desktop-maintenance .maintenance-section { padding-block: 62px; }
+  .desktop-maintenance .maintenance-heading { gap: 14px; margin-bottom: 28px; }
+  .desktop-maintenance h2 { font-size: 30px; line-height: 1.2; }
+  .desktop-maintenance .maintenance-heading > p { font-size: 12px; }
+  .desktop-maintenance .maintenance-card-grid { grid-template-columns: 1fr; gap: 14px; }
+  .desktop-maintenance .maintenance-card { padding: 24px 20px; }
+  .desktop-maintenance .maintenance-card-top { margin-bottom: 22px; }
+  .desktop-maintenance .maintenance-card > p { font-size: 12px; line-height: 1.85; }
+  .desktop-maintenance .maintenance-card ul { margin-block: 20px 24px; }
+  .desktop-maintenance .maintenance-experience-grid { grid-template-columns: 1fr; gap: 34px; }
+  .desktop-maintenance .maintenance-team { width: 100%; }
+  .desktop-maintenance .maintenance-team > img { height: 330px; }
+  .desktop-maintenance .maintenance-experience-copy > p:not(.maintenance-eyebrow) { font-size: 13px; line-height: 1.85; margin-top: 17px; }
+  .desktop-maintenance .maintenance-process { grid-template-columns: 1fr; gap: 0; }
+  .desktop-maintenance .maintenance-process li { padding-block: 22px; }
+  .desktop-maintenance .maintenance-process li > span { margin-bottom: 12px; }
+  .desktop-maintenance .maintenance-assistance { padding-block: 54px; }
+  .desktop-maintenance .maintenance-assistance-grid { grid-template-columns: 1fr; gap: 30px; }
+  .desktop-maintenance .maintenance-phones a { min-height: 60px; padding: 16px 18px; }
+  .desktop-maintenance .maintenance-phones span { font-size: 20px; }
+  .desktop-maintenance .maintenance-contact { padding-block: 52px; }
+  .desktop-maintenance .maintenance-contact-inner { align-items: stretch; flex-direction: column; gap: 28px; }
+}
 @media (prefers-reduced-motion: reduce) { .desktop-maintenance * { transition: none !important; } }

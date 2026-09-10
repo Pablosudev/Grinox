@@ -73,5 +73,33 @@
   .desktop-contact .contact-intro-grid { grid-template-columns: 1fr; gap: 25px; }
   .desktop-contact .contact-intro-grid > p { max-width: 580px; }
 }
-@media (width < 723px) { .desktop-contact { display: none; } }
+@media (max-width: 722px) {
+  .desktop-contact .contact-container { width: calc(100% - 40px); }
+  .desktop-contact .contact-intro { padding-block: 22px 42px; }
+  .desktop-contact .contact-breadcrumb { margin-bottom: 38px; font-size: 10px; }
+  .desktop-contact .contact-intro-grid { grid-template-columns: 1fr; gap: 20px; }
+  .desktop-contact .contact-eyebrow { margin-bottom: 14px; font-size: 9px; letter-spacing: .14em; }
+  .desktop-contact h1 { font-size: clamp(38px, 11.5vw, 48px); line-height: 1.1; }
+  .desktop-contact .contact-intro-grid > p { padding: 0; font-size: 13px; line-height: 1.8; }
+  .desktop-contact .contact-main-grid { grid-template-columns: 1fr; gap: 52px; padding-block: 48px 62px; }
+  .desktop-contact .contact-form-card { grid-row: 1; padding: 25px 20px; }
+  .desktop-contact h2 { font-size: 30px; line-height: 1.2; }
+  .desktop-contact .contact-form-card h2 { font-size: 26px; }
+  .desktop-contact .contact-form { margin-top: 22px; }
+  .desktop-contact fieldset { gap: 18px; }
+  .desktop-contact .contact-form-row { grid-template-columns: 1fr; gap: 18px; }
+  .desktop-contact input,
+  .desktop-contact textarea { min-height: 48px; padding: 13px; font-size: 16px; }
+  .desktop-contact textarea { min-height: 150px; }
+  .desktop-contact .contact-form-footer { align-items: stretch; flex-direction: column; gap: 16px; }
+  .desktop-contact .contact-submit { width: 100%; min-height: 52px; justify-content: space-between; }
+  .desktop-contact .contact-details-intro { font-size: 13px; }
+  .desktop-contact .contact-detail { gap: 15px; padding-block: 22px; }
+  .desktop-contact .contact-detail a { font-size: 16px; }
+  .desktop-contact .contact-detail .contact-email { font-size: 12px; }
+  .desktop-contact .contact-incident { padding: 22px 18px; }
+  .desktop-contact .contact-reach { padding-block: 52px; }
+  .desktop-contact .contact-reach-inner { grid-template-columns: 1fr; gap: 20px; }
+  .desktop-contact .contact-reach-inner > p { font-size: 13px; line-height: 1.85; }
+}
 @media (prefers-reduced-motion: reduce) { .desktop-contact * { transition: none !important; } }

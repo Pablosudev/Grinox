@@ -1,13 +1,13 @@
 [
     {
         "id" : 1,
-        "name":"DECANTADORES SEPARADORES DE 2 FASES",
-        "imagen": "/img/Maquinas/maquina1.png",
-        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+        "name":"BOMBAS HELICOIDALES",
+        "imagen": "/img/Maquinas/bomba-helicoidal.png",
+        "info": "Bombas helicoidales para líneas de proceso de almazaras. Consulta las características y las opciones de montaje y conexionado para tu instalación."
     },
     {
         "id" : 2,
-        "name":"DECANTADORES SEPARADORES DE 3 FASES",
+        "name":"DECANTADORES SEPARADORES",
         "imagen": "/img/Maquinas/maquina2.png",
         "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
     },
@@ -19,8 +19,8 @@
     },
     {
         "id" : 4,
-        "name":"BOMBAS DE PINTÓN",
-        "imagen": "/img/Maquinas/maquina1.png",
-        "info": "Diseñado para garantizar una trituración eficiente y homegénea de las aceitunas, optimizando el rendimiento en la extracción del aceite.Fabricado con materiales de alta resistencia y fácil limpieza, asegura unproceso continuo, higiénico y adapatado a las exigencias de las almazaras modernas."
+        "name":"BOMBAS DE PISTÓN PARA LÍNEAS DE EXTRACCIÓN",
+        "imagen": "/img/Maquinas/bomba-piston-extraccion-v2.png",
+        "info": "Bombas de pistón para líneas de extracción de aceite. Consulta las características y las opciones de montaje y conexionado para tu instalación."
     }
 ]
