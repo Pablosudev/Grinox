@@ -1,0 +1,89 @@
+.desktop-services {
+  --services-ink: #172c3d;
+  --services-blue: #3178ab;
+  --services-muted: #61707b;
+  background: #fff;
+  color: var(--services-ink);
+  line-height: 1.6;
+}
+.desktop-services .services-container { width: min(1240px, 88%); margin-inline: auto; }
+.desktop-services a { color: inherit; text-decoration: none; }
+.desktop-services a:focus-visible { outline: 3px solid #3178ab; outline-offset: 5px; }
+.desktop-services .services-hero { background: #f3f6f8; border-bottom: 1px solid #e1e8ed; }
+.desktop-services .services-hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 64px; padding-block: 44px 58px; }
+.desktop-services .services-breadcrumb { display: flex; gap: 12px; font-size: 11px; color: var(--services-muted); margin-bottom: 42px; }
+.desktop-services .services-breadcrumb a:hover { text-decoration: underline; }
+.desktop-services .services-eyebrow { display: block; font-size: 11px; letter-spacing: .16em; font-weight: 600; color: var(--services-blue); margin-bottom: 18px; }
+.desktop-services h1 { font-size: clamp(39px, 3.8vw, 58px); font-weight: 500; line-height: 1.16; letter-spacing: -.055em; }
+.desktop-services h1 em { font-style: normal; color: var(--services-blue); }
+.desktop-services .services-lead { font-size: 14px; line-height: 1.95; color: var(--services-muted); max-width: 530px; margin-top: 24px; }
+.desktop-services .services-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 28px; }
+.desktop-services .services-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--services-blue); color: #fff; padding: 17px 22px; border-radius: 3px; font-size: 13px; font-weight: 500; transition: background .2s, transform .2s; }
+.desktop-services .services-button:hover { background: #235f8a; transform: translateY(-2px); }
+.desktop-services .services-button svg { width: 20px; height: 20px; flex-shrink: 0; }
+.desktop-services .services-link { display: inline-flex; align-items: center; gap: 16px; font-size: 12px; font-weight: 500; }
+.desktop-services .services-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.desktop-services .services-hero-image { position: relative; align-self: stretch; min-height: 450px; overflow: hidden; border-radius: 4px; }
+.desktop-services .services-hero-image img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 30% center; }
+.desktop-services .services-hero-image figcaption { position: absolute; bottom: 0; inset-inline: 0; padding: 70px 26px 26px; background: linear-gradient(transparent, #112b40ed); color: #fff; font-size: 15px; }
+.desktop-services .services-hero-image figcaption span { display: block; font-size: 9px; letter-spacing: .15em; margin-bottom: 6px; color: #c8deed; }
+.desktop-services .services-section { padding-block: 80px; scroll-margin-top: 110px; }
+.desktop-services .services-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 34px; }
+.desktop-services h2 { font-size: clamp(27px, 2.6vw, 39px); font-weight: 500; letter-spacing: -.045em; line-height: 1.25; }
+.desktop-services .services-heading > p { color: var(--services-muted); font-size: 12px; line-height: 1.8; flex-shrink: 0; }
+.desktop-services .services-overview, .desktop-services .services-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.desktop-services .services-overview-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid #dce4e9; border-radius: 4px; transition: background .2s, border-color .2s; }
+.desktop-services .services-overview-card:hover { background: #f5f9fc; border-color: #7ba8c7; }
+.desktop-services .services-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.desktop-services .services-card-top svg { font-size: 29px; stroke-width: 1.3; color: var(--services-blue); }
+.desktop-services .services-card-top span { color: #718490; font-size: 11px; }
+.desktop-services h3 { font-size: 19px; line-height: 1.4; letter-spacing: -.025em; font-weight: 500; }
+.desktop-services .services-overview-card p { font-size: 13px; color: var(--services-muted); line-height: 1.85; margin-block: 15px 26px; }
+.desktop-services .services-card-action { display: flex; justify-content: space-between; align-items: center; gap: 16px; border-top: 1px solid #e0e7eb; padding-top: 20px; margin-top: auto; font-size: 12px; font-weight: 500; }
+.desktop-services a.services-card-action:hover { color: var(--services-blue); }
+.desktop-services .services-card-action svg { flex-shrink: 0; }
+.desktop-services .services-fabrication { background: #f3f6f8; }
+.desktop-services .services-product { display: flex; flex-direction: column; overflow: hidden; border: 1px solid #e0e7eb; border-radius: 5px; background: #fff; }
+.desktop-services .services-product-image { position: relative; height: 290px; background: #edf2f5; padding: 40px 28px 20px; }
+.desktop-services .services-product-image > span { position: absolute; left: 22px; top: 18px; color: #536b7c; font-size: 9px; letter-spacing: .13em; }
+.desktop-services .services-product-image img { display: block; height: 100%; width: 100%; object-fit: contain; }
+.desktop-services .services-product-copy { padding: 26px; display: flex; flex-direction: column; flex: 1; }
+.desktop-services .services-product-copy p { font-size: 13px; color: var(--services-muted); line-height: 1.9; margin-block: 16px 24px; }
+.desktop-services .services-machinery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.desktop-services .services-machine { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; border: 1px solid #dce4e9; border-radius: 4px; overflow: hidden; }
+.desktop-services .services-machine-image { align-self: stretch; min-height: 220px; padding: 24px; background: #f5f7f9; display: flex; align-items: center; }
+.desktop-services .services-machine-image img { width: 100%; height: 170px; object-fit: contain; display: block; }
+.desktop-services .services-machine-copy { padding: 24px; min-width: 0; }
+.desktop-services .services-machine-copy .services-eyebrow { font-size: 9px; margin-bottom: 10px; }
+.desktop-services .services-machine-copy h3 { font-size: 17px; margin-bottom: 24px; }
+.desktop-services .services-advice { display: flex; align-items: center; gap: 24px; background: #f3f6f8; padding: 26px 30px; margin-top: 28px; border-radius: 4px; }
+.desktop-services .services-advice > svg { font-size: 26px; color: var(--services-blue); flex-shrink: 0; }
+.desktop-services .services-advice p { flex: 1; font-size: 12px; color: var(--services-muted); }
+.desktop-services .services-advice strong { display: block; color: var(--services-ink); font-weight: 500; margin-bottom: 5px; }
+.desktop-services .services-contact { background: #eaf2f7; padding-block: 65px; }
+.desktop-services .services-contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+.desktop-services .services-contact-inner p:last-child { margin-top: 18px; font-size: 12px; color: var(--services-muted); }
+@media (max-width: 1100px) {
+  .desktop-services .services-container { width: 90%; }
+  .desktop-services .services-hero-grid { gap: 30px; grid-template-columns: 1.2fr 1fr; }
+  .desktop-services .services-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .desktop-services .services-overview-card, .desktop-services .services-product-copy { padding: 22px; }
+  .desktop-services .services-product-image { height: 240px; padding-inline: 18px; }
+  .desktop-services .services-machine { grid-template-columns: 1fr; }
+  .desktop-services .services-machine-image { min-height: 190px; }
+  .desktop-services .services-machine-copy { display: flex; flex-direction: column; align-items: flex-start; }
+}
+@media (min-width: 723px) and (max-width: 850px) {
+  .desktop-services .services-hero-grid { gap: 25px; }
+  .desktop-services h1 { font-size: 38px; }
+  .desktop-services .services-hero-image figcaption { font-size: 12px; padding-inline: 18px; }
+  .desktop-services .services-overview { gap: 14px; }
+  .desktop-services .services-overview-card { padding: 20px 16px; }
+  .desktop-services .services-product-grid { grid-template-columns: 1fr; }
+  .desktop-services .services-product { display: grid; grid-template-columns: .85fr 1.15fr; }
+  .desktop-services .services-product-image { height: auto; min-height: 270px; }
+  .desktop-services .services-product-image img { height: 220px; }
+  .desktop-services .services-contact-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (width < 723px) { .desktop-services { display: none; } }
+@media (prefers-reduced-motion: reduce) { .desktop-services * { transition: none !important; } }

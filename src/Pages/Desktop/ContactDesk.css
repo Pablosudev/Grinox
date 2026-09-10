@@ -1,0 +1,77 @@
+.desktop-contact { --contact-ink: #172c3d; --contact-blue: #3178ab; --contact-muted: #61707b; color: var(--contact-ink); background: #fff; line-height: 1.6; }
+.desktop-contact .contact-container { width: min(1240px, 88%); margin-inline: auto; }
+.desktop-contact a { color: inherit; text-decoration: none; }
+.desktop-contact a:focus-visible, .desktop-contact button:focus-visible { outline: 3px solid #5faee4; outline-offset: 5px; }
+.desktop-contact .contact-intro { background: #f3f6f8; border-bottom: 1px solid #e1e8ed; padding-block: 30px 55px; }
+.desktop-contact .contact-breadcrumb { display: flex; gap: 12px; font-size: 11px; color: var(--contact-muted); margin-bottom: 36px; }
+.desktop-contact .contact-breadcrumb a:hover { text-decoration: underline; }
+.desktop-contact .contact-intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: end; gap: 70px; }
+.desktop-contact .contact-eyebrow { font-size: 11px; letter-spacing: .16em; font-weight: 600; color: var(--contact-blue); margin-bottom: 18px; }
+.desktop-contact h1 { font-size: clamp(40px, 3.8vw, 58px); line-height: 1.16; letter-spacing: -.05em; font-weight: 500; }
+.desktop-contact h1 em { font-style: normal; color: var(--contact-blue); }
+.desktop-contact .contact-intro-grid > p { font-size: 14px; line-height: 1.95; color: var(--contact-muted); max-width: 430px; padding-bottom: 6px; }
+.desktop-contact .contact-main-grid { display: grid; grid-template-columns: .8fr 1.35fr; align-items: start; gap: 70px; padding-block: 65px 80px; }
+.desktop-contact h2 { font-size: clamp(25px, 2.3vw, 33px); line-height: 1.3; letter-spacing: -.04em; font-weight: 500; }
+.desktop-contact .contact-details-intro { font-size: 13px; line-height: 1.9; color: var(--contact-muted); margin-top: 18px; max-width: 330px; }
+.desktop-contact .contact-detail { display: flex; align-items: flex-start; gap: 18px; padding-block: 24px; border-bottom: 1px solid #e1e8ed; }
+.desktop-contact .contact-detail > svg { color: var(--contact-blue); font-size: 20px; flex-shrink: 0; margin-top: 4px; }
+.desktop-contact .contact-detail > div { min-width: 0; }
+.desktop-contact h3 { font-size: 13px; font-weight: 500; margin-bottom: 9px; }
+.desktop-contact .contact-detail a { display: block; font-size: 15px; line-height: 1.9; }
+.desktop-contact .contact-detail a:hover { color: var(--contact-blue); text-decoration: underline; text-underline-offset: 4px; }
+.desktop-contact .contact-detail .contact-email { font-size: 13px; overflow-wrap: anywhere; }
+.desktop-contact address { font-style: normal; font-size: 13px; color: var(--contact-muted); line-height: 1.9; }
+.desktop-contact .contact-detail .contact-directions { display: inline-flex; align-items: center; gap: 14px; font-size: 12px; color: var(--contact-blue); margin-top: 12px; }
+.desktop-contact .contact-incident { background: #142b3c; color: white; border-radius: 4px; padding: 24px; margin-top: 26px; display: flex; align-items: flex-start; gap: 16px; }
+.desktop-contact .contact-incident > svg { color: #8fc7eb; flex-shrink: 0; margin-top: 3px; }
+.desktop-contact .contact-incident p { font-size: 12px; line-height: 1.9; color: #cbdce7; }
+.desktop-contact .contact-incident a { display: inline-flex; align-items: center; gap: 16px; font-size: 12px; margin-top: 18px; }
+.desktop-contact .contact-incident a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.desktop-contact .contact-form-card { background: #fff; border: 1px solid #dce4e9; border-radius: 5px; padding: 38px; box-shadow: 0 12px 35px #172c3d06; min-width: 0; }
+.desktop-contact .contact-form-card h2 { font-size: clamp(24px, 2vw, 29px); }
+.desktop-contact .contact-form-intro { font-size: 13px; color: var(--contact-muted); margin-top: 14px; line-height: 1.8; }
+.desktop-contact .contact-form { margin-top: 26px; }
+.desktop-contact .contact-required { font-size: 11px; color: var(--contact-muted); margin-bottom: 18px; }
+.desktop-contact fieldset { border: 0; padding: 0; margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+.desktop-contact .contact-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.desktop-contact .contact-field { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.desktop-contact label { font-size: 12px; font-weight: 500; }
+.desktop-contact input, .desktop-contact textarea { width: 100%; min-width: 0; border: 1px solid #cbd7df; border-radius: 3px; padding: 13px 14px; font: inherit; font-size: 13px; color: var(--contact-ink); background: #f9fbfc; transition: border-color .2s, box-shadow .2s; }
+.desktop-contact input::placeholder, .desktop-contact textarea::placeholder { color: #6e7d88; opacity: 1; }
+.desktop-contact input:focus, .desktop-contact textarea:focus { outline: 2px solid #3178ab; outline-offset: 2px; border-color: #3178ab; background: #fff; }
+.desktop-contact textarea { resize: vertical; min-height: 165px; line-height: 1.8; }
+.desktop-contact input:disabled, .desktop-contact textarea:disabled { opacity: .65; cursor: wait; }
+.desktop-contact .contact-form-footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 3px; }
+.desktop-contact .contact-form-footer p { max-width: 220px; font-size: 11px; line-height: 1.8; color: var(--contact-muted); }
+.desktop-contact .contact-submit { display: inline-flex; align-items: center; justify-content: center; gap: 22px; border: 0; border-radius: 3px; padding: 17px 22px; background: var(--contact-blue); color: white; font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; flex-shrink: 0; transition: background .2s; }
+.desktop-contact .contact-submit svg { width: 19px; height: 19px; }
+.desktop-contact .contact-submit:hover:not(:disabled) { background: #235f8a; }
+.desktop-contact .contact-submit:disabled { opacity: .65; cursor: wait; }
+.desktop-contact .contact-response { display: flex; gap: 12px; align-items: flex-start; margin-top: 24px; padding: 16px; border-radius: 3px; border: 1px solid; font-size: 13px; line-height: 1.8; }
+.desktop-contact .contact-response svg { flex-shrink: 0; margin-top: 4px; }
+.desktop-contact .contact-response-success { background: #edf7f0; color: #245f3d; border-color: #b8d8c3; }
+.desktop-contact .contact-response-error { background: #fff2f0; color: #8a3328; border-color: #ecc8c1; }
+.desktop-contact .contact-honeypot, .desktop-contact .contact-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.desktop-contact .contact-reach { background: #eaf2f7; padding-block: 60px; }
+.desktop-contact .contact-reach-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+.desktop-contact .contact-reach-inner > p { color: var(--contact-muted); font-size: 13px; line-height: 1.95; max-width: 480px; }
+@media (max-width: 1100px) {
+  .desktop-contact .contact-container { width: 90%; }
+  .desktop-contact .contact-main-grid { grid-template-columns: .85fr 1.25fr; gap: 30px; }
+  .desktop-contact .contact-form-card { padding: 28px; }
+  .desktop-contact .contact-intro-grid, .desktop-contact .contact-reach-inner { gap: 35px; }
+  .desktop-contact .contact-form-row { grid-template-columns: 1fr; }
+  .desktop-contact .contact-form-footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .desktop-contact .contact-form-footer p { max-width: none; }
+}
+@media (min-width: 723px) and (max-width: 850px) {
+  .desktop-contact .contact-main-grid { grid-template-columns: 1fr; }
+  .desktop-contact .contact-form-card { grid-row: 1; padding: 32px; }
+  .desktop-contact .contact-form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .desktop-contact .contact-form-footer { flex-direction: row; align-items: center; }
+  .desktop-contact .contact-details { max-width: 560px; }
+  .desktop-contact .contact-intro-grid { grid-template-columns: 1fr; gap: 25px; }
+  .desktop-contact .contact-intro-grid > p { max-width: 580px; }
+}
+@media (width < 723px) { .desktop-contact { display: none; } }
+@media (prefers-reduced-motion: reduce) { .desktop-contact * { transition: none !important; } }

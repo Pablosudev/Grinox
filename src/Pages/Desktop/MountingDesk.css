@@ -1,0 +1,85 @@
+.desktop-mounting { --mounting-ink: #172c3d; --mounting-blue: #3178ab; --mounting-muted: #61707b; background: #fff; color: var(--mounting-ink); line-height: 1.6; }
+.desktop-mounting .mounting-container { width: min(1240px, 88%); margin-inline: auto; }
+.desktop-mounting a { color: inherit; text-decoration: none; }
+.desktop-mounting a:focus-visible { outline: 3px solid #5faee4; outline-offset: 5px; }
+.desktop-mounting .mounting-hero { position: relative; isolation: isolate; background: #142b3c; color: #fff; }
+.desktop-mounting .mounting-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; z-index: -2; }
+.desktop-mounting .mounting-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #0c2235f2, #0c2235d6 42%, #0c223545); }
+.desktop-mounting .mounting-hero-content { padding-block: 30px 26px; }
+.desktop-mounting .mounting-breadcrumb { display: flex; gap: 12px; font-size: 11px; color: #cedce6; margin-bottom: 58px; }
+.desktop-mounting .mounting-breadcrumb a:hover { text-decoration: underline; }
+.desktop-mounting .mounting-eyebrow { font-size: 11px; letter-spacing: .16em; font-weight: 600; color: var(--mounting-blue); margin-bottom: 18px; }
+.desktop-mounting .mounting-hero .mounting-eyebrow { color: #bddff4; }
+.desktop-mounting h1 { font-size: clamp(40px, 4.1vw, 62px); font-weight: 500; letter-spacing: -.05em; line-height: 1.15; }
+.desktop-mounting h1 em { font-style: normal; color: #8fc7eb; }
+.desktop-mounting .mounting-lead { font-size: 15px; line-height: 1.9; color: #d5e0e6; max-width: 560px; margin-top: 25px; }
+.desktop-mounting .mounting-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 30px; margin-block: 30px 64px; }
+.desktop-mounting .mounting-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; padding: 17px 22px; border-radius: 3px; background: var(--mounting-blue); color: #fff; font-size: 13px; font-weight: 500; transition: background .2s, transform .2s; }
+.desktop-mounting .mounting-button:hover { background: #235f8a; transform: translateY(-2px); }
+.desktop-mounting .mounting-button svg { width: 20px; height: 20px; flex-shrink: 0; }
+.desktop-mounting .mounting-link { display: inline-flex; align-items: center; gap: 16px; font-size: 12px; font-weight: 500; }
+.desktop-mounting .mounting-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.desktop-mounting .mounting-hero-note { display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid #ffffff30; padding-top: 22px; font-size: 9px; letter-spacing: .1em; color: #d5e0e6; }
+.desktop-mounting .mounting-section { padding-block: 80px; scroll-margin-top: 110px; }
+.desktop-mounting .mounting-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 35px; }
+.desktop-mounting h2 { font-size: clamp(27px, 2.6vw, 39px); font-weight: 500; letter-spacing: -.045em; line-height: 1.25; }
+.desktop-mounting .mounting-heading > p { font-size: 12px; line-height: 1.8; color: var(--mounting-muted); }
+.desktop-mounting .mounting-area-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.desktop-mounting .mounting-area { display: flex; flex-direction: column; border: 1px solid #dce4e9; border-radius: 4px; padding: 26px 22px; transition: background .2s, border-color .2s; }
+.desktop-mounting .mounting-area:hover { background: #f5f9fc; border-color: #7ba8c7; }
+.desktop-mounting .mounting-area-number { font-size: 12px; color: var(--mounting-blue); margin-bottom: 24px; }
+.desktop-mounting h3 { font-size: 18px; font-weight: 500; letter-spacing: -.025em; line-height: 1.4; }
+.desktop-mounting .mounting-area p { font-size: 12px; line-height: 1.85; color: var(--mounting-muted); margin-block: 15px 24px; }
+.desktop-mounting .mounting-area-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid #e0e7eb; padding-top: 18px; margin-top: auto; font-size: 12px; }
+.desktop-mounting .mounting-tinted { background: #f3f6f8; }
+.desktop-mounting .mounting-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.desktop-mounting .mounting-detail-photo { overflow: hidden; border-radius: 4px; background: #e5edf2; }
+.desktop-mounting .mounting-detail-photo img { display: block; width: 100%; height: 360px; object-fit: cover; }
+.desktop-mounting .mounting-detail-photo figcaption { padding: 18px 22px; font-size: 11px; color: #425e72; }
+.desktop-mounting .mounting-equipment-photo img { height: 400px; object-fit: contain; background: #e5edf2; }
+.desktop-mounting .mounting-pipe-photo img { height: 415px; object-fit: contain; padding: 24px; }
+.desktop-mounting .mounting-detail-copy > p:not(.mounting-eyebrow) { font-size: 13px; line-height: 1.95; color: var(--mounting-muted); margin-top: 20px; }
+.desktop-mounting .mounting-checklist { list-style: none; display: grid; gap: 12px; margin-block: 25px; }
+.desktop-mounting .mounting-checklist li { display: flex; align-items: flex-start; gap: 12px; font-size: 12px; }
+.desktop-mounting .mounting-checklist svg { color: var(--mounting-blue); flex-shrink: 0; margin-top: 4px; }
+.desktop-mounting .mounting-startup-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 80px; }
+.desktop-mounting .mounting-startup-intro { font-size: 13px; line-height: 1.95; color: var(--mounting-muted); margin-top: 22px; max-width: 560px; }
+.desktop-mounting .mounting-steps { list-style: none; margin-top: 25px; }
+.desktop-mounting .mounting-steps li { display: flex; gap: 20px; padding-block: 18px; border-top: 1px solid #dce4e9; }
+.desktop-mounting .mounting-steps li > span { color: var(--mounting-blue); font-size: 11px; padding-top: 3px; }
+.desktop-mounting .mounting-steps h3 { font-size: 16px; }
+.desktop-mounting .mounting-steps p { font-size: 12px; color: var(--mounting-muted); margin-top: 4px; }
+.desktop-mounting .mounting-team { display: grid; grid-template-columns: 1fr; width: min(100%, 370px); justify-self: center; border-radius: 4px; overflow: hidden; background: #fff; }
+.desktop-mounting .mounting-team > img { display: block; width: 100%; height: 360px; object-fit: cover; object-position: center 55%; transform: scaleX(-1); }
+.desktop-mounting .mounting-team > div { padding: 25px; }
+.desktop-mounting .mounting-team svg { color: var(--mounting-blue); font-size: 23px; margin-bottom: 12px; }
+.desktop-mounting .mounting-team h3 { font-size: 17px; }
+.desktop-mounting .mounting-team p { font-size: 12px; color: var(--mounting-muted); margin-top: 10px; }
+.desktop-mounting .mounting-safety { background: #142b3c; color: #fff; padding-block: 65px; scroll-margin-top: 110px; }
+.desktop-mounting .mounting-safety-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.desktop-mounting .mounting-safety-icon { font-size: 30px; color: #8fc7eb; margin-bottom: 20px; }
+.desktop-mounting .mounting-safety .mounting-eyebrow { color: #8fc7eb; }
+.desktop-mounting .mounting-safety-grid > div > p:not(.mounting-eyebrow) { color: #d5e0e6; font-size: 13px; line-height: 1.95; }
+.desktop-mounting .mounting-safety-values { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+.desktop-mounting .mounting-safety-values span { border: 1px solid #ffffff35; padding: 8px 12px; border-radius: 3px; font-size: 10px; color: #d5e0e6; }
+.desktop-mounting .mounting-contact { background: #eaf2f7; padding-block: 65px; }
+.desktop-mounting .mounting-contact-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
+.desktop-mounting .mounting-contact p:last-child { margin-top: 18px; color: var(--mounting-muted); font-size: 12px; }
+@media (max-width: 1100px) {
+  .desktop-mounting .mounting-container { width: 90%; }
+  .desktop-mounting .mounting-area-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .desktop-mounting .mounting-detail-grid, .desktop-mounting .mounting-startup-grid, .desktop-mounting .mounting-safety-grid { gap: 35px; }
+  .desktop-mounting .mounting-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .desktop-mounting .mounting-contact-inner { align-items: flex-start; flex-direction: column; }
+}
+@media (min-width: 723px) and (max-width: 850px) {
+  .desktop-mounting .mounting-section { padding-block: 60px; }
+  .desktop-mounting .mounting-hero-note { flex-wrap: wrap; gap: 10px; }
+  .desktop-mounting .mounting-detail-grid { grid-template-columns: 1fr; }
+  .desktop-mounting .mounting-detail-photo img, .desktop-mounting .mounting-pipe-photo img { height: 340px; }
+  .desktop-mounting .mounting-startup-grid { grid-template-columns: 1.15fr 1fr; gap: 28px; }
+  .desktop-mounting .mounting-team > img { height: 320px; }
+  .desktop-mounting .mounting-safety-grid { grid-template-columns: 1fr; }
+}
+@media (width < 723px) { .desktop-mounting { display: none; } }
+@media (prefers-reduced-motion: reduce) { .desktop-mounting * { transition: none !important; } }

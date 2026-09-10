@@ -1,7 +1,6 @@
-import { StrictMode, useEffect } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { initFadeObserver } from "./Pages/Components/Observer";
 import { GlobalStyle } from "./Pages/Layout/GlobalStyle";
 import Layout from "./Pages/Layout/Layout";
 import ContactPage from "./Pages/Pages/ContactPage";
@@ -13,9 +12,6 @@ import Rea from "./Pages/Desktop/Certificados/Rea";
 import Iso from "./Pages/Desktop/Certificados/Iso";
 
 function App() {
-  useEffect(() => {
-    initFadeObserver(); 
-  }, []);
 
   return (
     <>

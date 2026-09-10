@@ -1,312 +1,47 @@
-import styled from "styled-components";
-import Accordion from "../Components/Accordion";
-import CardsMaintenance from "../Components/CardsMaintenance";
+import { Link } from "react-router-dom";
+import { FiArrowDown, FiArrowUpRight, FiCalendar, FiCheck, FiPhone, FiTool } from "react-icons/fi";
+import "./MaintenanceDesk.css";
+
 export default function MaintenanceDesktop() {
   return (
-    <MainDesk>
-      <ContainerFirst>
-        <ImgBackground src="img/Backgrounds/OlivosFondo.png" />
-        <Polygon src="img/Logos/PolygonBlue.png" />
-        <ContainerTriangle>
-          <TextContainer>
-            <TitleTriangle>
-              MANTENIMIENTO DE INSTALACIONES ALIMENTARIAS
-            </TitleTriangle>
-            <TextTriangle>
-              En <Negrita>Grinox Industrial</Negrita>, combinamos experiencia,
-              rapidez y compromiso. Nuestro equipo técnico conoce a fondo las
-              exigencias del sector alimentario, lo que nos permite anticiparnos
-              a fallos, optimizar el rendimiento de tus instalaciones y
-              garantizar el cumplimiento de las normativas sanitarias. Elegirnos
-              es asegurar continuidad, seguridad y tranquilidad operativa.
-            </TextTriangle>
-          </TextContainer>
-        </ContainerTriangle>
-      </ContainerFirst>
-      <AccordionWrapper>
-        <AccordionRow>
-          <Container>
-            <ContainerText>
-              <TitleGrinox>¿POR QUÉ EN GRINOX?</TitleGrinox>
-              <TextGrinox>
-                En Grinox Industrial, combinamos experiencia, rapidez y
-                compromiso. Nuestro equipo técnico conoce a fondo las exigencias
-                del sector alimentario, lo que nos permite anticiparnos a
-                fallos, optimizar el rendimiento de tus instalaciones y
-                garantizar el cumplimiento de las normativas sanitarias.
-                Elegirnos es asegurar continuidad, seguridad y tranquilidad
-                operativa.
-              </TextGrinox>
-            </ContainerText>
-            <Portada
-              src="/img/Backgrounds/portadilla.jpg"
-              alt="portadaGrinox"
-            />
-          </Container>
-        </AccordionRow>
-      </AccordionWrapper>
-      <CardsMaintenance />
-      <Title>
-        BENEFICIOS DE HACERLO CON <b style={{ color: "#447aab" }}>GRINOX</b>
-      </Title>
+    <main className="desktop-maintenance">
+      <section className="maintenance-hero" aria-labelledby="maintenance-title">
+        <div className="maintenance-container maintenance-hero-grid">
+          <div>
+            <nav className="maintenance-breadcrumb" aria-label="Ruta de navegación"><Link to="/">Inicio</Link><span aria-hidden="true">/</span><span aria-current="page">Mantenimiento</span></nav>
+            <p className="maintenance-eyebrow">MANTENIMIENTO INDUSTRIAL GRINOX</p>
+            <h1 id="maintenance-title">Cuidamos lo que<br /><em>mueve tu industria.</em></h1>
+            <p className="maintenance-lead">Mantenimiento para almazaras e instalaciones alimentarias. Revisamos, intervenimos y te acompañamos para cuidar tus equipos campaña tras campaña.</p>
+            <div className="maintenance-actions"><Link className="maintenance-button" to="/contacto">Consulta tu mantenimiento <FiArrowUpRight aria-hidden="true" /></Link><a className="maintenance-link" href="#tipos-mantenimiento">Conoce los servicios <FiArrowDown aria-hidden="true" /></a></div>
+          </div>
+          <figure className="maintenance-hero-photo"><img src="/img/Imgs/Maquina.png" alt="Detalle de un equipo industrial con bomba, conducciones y mangueras" fetchPriority="high" /><figcaption><FiTool aria-hidden="true" /><div><strong>Atención a cada equipo.</strong><span>Una visión completa de tu instalación.</span></div></figcaption></figure>
+        </div>
+      </section>
 
-      <ListContainer>
-        <List>
-          <ListItem>TÉCNICOS ESPECIALIZADOS EN ENTORNOS ALIMENTARIOS.</ListItem>
-          <ListItem>CUMPLIMIENTO CON NORMATIVAS.</ListItem>
-          <ListItem>
-            DESMONTAJE DE MAQUINARIA Y EQUIPOS DE GRAN ESCALA.
-          </ListItem>
-          <ListItem>
-            ACTIVIDADES DE LOS MECÁNICOS COMPROBADORES DE MAQUINARIA.
-          </ListItem>
-          <ListItem>INSTALACIÓN DE MAQUINARIA EN GENERAL.</ListItem>
-          <ListItem>CONSTRUCCIÓN DE GRANDES DEPÓSITOS.</ListItem>
-        </List>
-        <Logo src="img/Logos/GR.png" />
-      </ListContainer>
-    </MainDesk>
+      <section className="maintenance-container maintenance-section" id="tipos-mantenimiento" aria-labelledby="maintenance-services-title">
+        <div className="maintenance-heading"><div><p className="maintenance-eyebrow">01 / CÓMO PODEMOS AYUDARTE</p><h2 id="maintenance-services-title">Cada necesidad, su intervención.</h2></div><p>Desde una revisión programada<br />hasta una parada de producción.</p></div>
+        <div className="maintenance-card-grid">
+          <article className="maintenance-card"><div className="maintenance-card-top"><FiCalendar aria-hidden="true" /><span>01 / PREVENIR</span></div><h3>Mantenimiento preventivo</h3><p>Revisiones programadas para detectar desgaste y anticiparse a fallos que puedan afectar a la producción.</p><ul><li>Revisión de equipos e instalaciones</li><li>Detección de puntos que necesitan atención</li><li>Planificación de las intervenciones</li></ul><Link className="maintenance-card-action" to="/contacto">Planificar una revisión <FiArrowUpRight aria-hidden="true" /></Link></article>
+          <article className="maintenance-card"><div className="maintenance-card-top"><FiTool aria-hidden="true" /><span>02 / RESOLVER</span></div><h3>Mantenimiento correctivo</h3><p>Intervenciones sobre averías y problemas de funcionamiento para recuperar la operatividad del equipo.</p><ul><li>Valoración de la incidencia</li><li>Intervención y ajustes necesarios</li><li>Comprobación del funcionamiento</li></ul><Link className="maintenance-card-action" to="/contacto">Consultar una intervención <FiArrowUpRight aria-hidden="true" /></Link></article>
+          <article className="maintenance-card maintenance-card-urgent"><div className="maintenance-card-top"><FiPhone aria-hidden="true" /><span>03 / ATENDER</span></div><h3>Asistencia urgente</h3><p>Si un fallo crítico interrumpe tu actividad, contacta directamente con nosotros para valorar la incidencia.</p><ul><li>Contacto telefónico directo</li><li>Información sobre el equipo afectado</li><li>Valoración de la intervención necesaria</li></ul><a className="maintenance-card-action" href="#asistencia">Ver teléfonos de contacto <FiArrowDown aria-hidden="true" /></a></article>
+        </div>
+      </section>
+
+      <section className="maintenance-tinted maintenance-section" aria-labelledby="maintenance-experience-title">
+        <div className="maintenance-container maintenance-experience-grid">
+          <div className="maintenance-team"><img src="/img/Photos/Trabajador2.png" alt="Técnico de Grinox trabajando en un equipo industrial" loading="lazy" /><div><span>A PIE DE INSTALACIÓN</span><strong>Oficio y atención directa.</strong></div></div>
+          <div className="maintenance-experience-copy"><p className="maintenance-eyebrow">02 / EXPERIENCIA QUE ACOMPAÑA</p><h2 id="maintenance-experience-title">Conocemos tu sector.<br />Cuidamos tu instalación.</h2><p>En Grinox combinamos experiencia técnica y cercanía para atender las necesidades de la industria alimentaria. Estudiamos cada intervención teniendo en cuenta el equipo, el entorno de trabajo y la actividad de la planta.</p><p>Prestamos atención al estado de la maquinaria, las conducciones y los elementos de la instalación, con el orden y la limpieza que requieren estos entornos.</p><ul className="maintenance-checklist"><li><FiCheck aria-hidden="true" />Maquinaria y equipos de proceso</li><li><FiCheck aria-hidden="true" />Conducciones y conexiones en inoxidable</li><li><FiCheck aria-hidden="true" />Elementos mecánicos de la instalación</li></ul><Link className="maintenance-link" to="/montaje">¿Necesitas montar o ampliar tu instalación? <FiArrowUpRight aria-hidden="true" /></Link></div>
+        </div>
+      </section>
+
+      <section className="maintenance-container maintenance-section" aria-labelledby="maintenance-process-title">
+        <div className="maintenance-heading"><div><p className="maintenance-eyebrow">03 / CERCA DE TI, EN CADA PASO</p><h2 id="maintenance-process-title">Empezamos por escucharte.</h2></div><p>Conocer el problema es el primer paso<br />para preparar la intervención.</p></div>
+        <ol className="maintenance-process"><li><span>01</span><h3>Cuéntanos qué ocurre</h3><p>Indícanos el equipo afectado, lo que has observado y cómo está influyendo en la actividad.</p></li><li><span>02</span><h3>Valoramos contigo</h3><p>Revisamos las necesidades del trabajo y concretamos los siguientes pasos de la intervención.</p></li><li><span>03</span><h3>Intervenimos y revisamos</h3><p>Realizamos los trabajos acordados y comprobamos el funcionamiento del equipo intervenido.</p></li></ol>
+      </section>
+
+      <section className="maintenance-assistance" id="asistencia" aria-labelledby="maintenance-assistance-title"><div className="maintenance-container maintenance-assistance-grid"><div><p className="maintenance-eyebrow">CONTACTO DIRECTO CON GRINOX</p><h2 id="maintenance-assistance-title">¿Una incidencia en tu instalación?</h2><p>Llámanos y cuéntanos qué está ocurriendo. Ten a mano el tipo de equipo y la ubicación de la planta para ayudarnos a valorar tu caso.</p></div><div className="maintenance-phones"><a href="tel:+34678574652"><FiPhone aria-hidden="true" /><span>678 574 652</span><FiArrowUpRight aria-hidden="true" /></a><a href="tel:+34662543947"><FiPhone aria-hidden="true" /><span>662 543 947</span><FiArrowUpRight aria-hidden="true" /></a></div></div></section>
+
+      <section className="maintenance-contact"><div className="maintenance-container maintenance-contact-inner"><div><p className="maintenance-eyebrow">PREPARA LA PRÓXIMA CAMPAÑA</p><h2>El cuidado de hoy cuenta mañana.</h2><p>Hablemos de las revisiones y mejoras que necesita tu instalación.</p></div><Link className="maintenance-button" to="/contacto">Hablemos de mantenimiento <FiArrowUpRight aria-hidden="true" /></Link></div></section>
+    </main>
   );
 }
-
-const MainDesk = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background-image: url("/img/Backgrounds/fondoGear.png");
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  z-index: 0;
-  padding-bottom: 5%;
-  @media screen and (max-width: 723px) {
-    display: none;
-  }
-`;
-const ContainerFirst = styled.div`
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  overflow: hidden;
-`;
-
-const ImgBackground = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-`;
-
-const Polygon = styled.img`
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 90%;
-`;
-
-const ContainerTriangle = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 12%;
-  transform: translateY(-50%);
-  z-index: 2;
-  text-align: right;
-  color: white;
-
-  @media (max-width: 1300px) {
-    right: 8%;
-  }
-  @media (max-width: 1200px) {
-    right: 9%;
-  }
-  @media (max-width: 953px) {
-    right: 4%;
-  }
-  @media (max-width: 843px) {
-    right: 4%;
-  }
-  @media (max-width: 773px) {
-    right: 2%;
-  }
-`;
-
-const TextContainer = styled.div`
-  max-width: 420px;
-
-  @media (max-width: 768px) {
-    margin: 0 auto;
-        padding-top: 30%;
-
-  }
-  @media (max-width: 1013px) {
-    margin: 0 auto;
-        padding-top: 30%;
-
-  }
-
-  @media (max-width: 789px) {
-    font-size: 0.7rem;
-    padding-top: 30%;
-  }
-`;
-
-const TitleTriangle = styled.div`
-  font-weight: 600;
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  @media (max-width: 1300px) {
-    font-size: 1rem;
-  }
-  @media (max-width: 989px) {
-    font-size: 0.9rem;
-  }
-  @media (max-width: 781px) {
-    font-size: 0.7rem;
-  }
-`;
-
-const TextTriangle = styled.p`
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0;
-  text-align: center;
-  @media (max-width: 1300px) {
-    font-size: 0.9rem;
-  }
-  @media (max-width: 989px) {
-    font-size: 0.8rem;
-  }
-`;
-const Negrita = styled.b`
-  color: black;
-`;
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
-const ContainerText = styled.div.attrs(() => ({
-  "data-fade-left": true,
-}))`
-  margin-top: 3%;
-  margin-left: 5%;
-  color: black;
-  background-color: #ffffff;
-  border-radius: 8px;
-  width: 50%;
-`;
-const TitleGrinox = styled.h1`
-  text-align: center;
-  font-weight: 600;
-  color: #447aab;
-  padding-top: 4%;
-`;
-const TextGrinox = styled.p`
-  padding-left: 5%;
-  padding-right: 5%;
-  text-align: center;
-  margin-top: 2%;
-  padding-bottom: 2%;
-`;
-const Portada = styled.img.attrs(() => ({
-  "data-fade-right": true,
-}))`
-  object-fit: contain;
-  width: 50%;
-  height: 25rem;
-  margin-top: 3%;
-`;
-
-const AccordionWrapper = styled.div`
-  width: 100%;
-  padding: 0 3rem; /* deja espacio respirable */
-  margin: 4rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-`;
-
-const AccordionRow = styled.div`
-  display: flex;
-  width: 100%;
-
-  &:nth-child(odd) {
-    justify-content: flex-start; /* IZQUIERDA */
-  }
-
-  &:nth-child(even) {
-    justify-content: flex-end; /* DERECHA */
-  }
-
-  @media (max-width: 900px) {
-    justify-content: center;
-  }
-`;
-const Title = styled.h1.attrs(() => ({
-  "data-fade-left": true,
-}))`
-  background-color: #ffffff;
-  color: black;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 1.5rem;
-  padding: 1% 3%;
-  margin-left: 5%;
-  width: 30%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  text-align: center;
-`;
-
-const Logo = styled.img`
-  width: 7rem;
-  margin-left: 2%;
-  position: absolute;
-  right: 5%;
-  bottom: 3%;
-`;
-const ListContainer = styled.div.attrs(() => ({
-  "data-fade-right": true,
-}))`
-  background-color: white;
-  color: black;
-  border-radius: 12px;
-  padding: 2rem 3rem;
-  max-width: 800px;
-  margin: 3rem;
-  margin-bottom: 0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-left: 6px solid #447aab;
-`;
-
-const List = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const ListItem = styled.li`
-  position: relative;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 1rem 0;
-  line-height: 1.5;
-  padding-left: 2rem;
-
-  &::before {
-    content: "⚙️";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #447aab;
-    font-size: 1.3rem;
-  }
-
-  &:hover {
-    color: #447aab;
-    transform: translateX(5px);
-    transition: all 0.2s ease;
-  }
-`;

@@ -1,16 +1,23 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import { initFadeObserver } from "../Components/Observer";
 import styled from "styled-components";
 import { MdOutlineMenu } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { HiMapPin } from "react-icons/hi2";
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
+import { FiFileText, FiArrowUpRight } from "react-icons/fi";
+import DesktopHeader from "./DesktopHeader";
 
 export default function Layout() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    return initFadeObserver();
+  }, [pathname]);
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
-  const togleMenu = () => setIsOpen(prev => !prev);
 
   useEffect(() => {
     const onScroll = () => {
@@ -25,6 +32,7 @@ export default function Layout() {
   return (
     <>
       <Layaout>
+        <DesktopHeader />
         <Navbar>
           <Link to="/">
             <LogoGrinox src="img/Logos/Grinox.png" alt="LogoGrinox" />
@@ -45,7 +53,7 @@ export default function Layout() {
         </Navbar>
         {/* Menu Móvil */}
         {isOpen && <Overlay onClick={closeMenu} />}
-        <MenuDrop id="menu-drop" $open={isOpen}  onClick={(isOpen) => false} >
+        <MenuDrop id="menu-drop" $open={isOpen}>
           <StyledLink href="/">
             <TitleDrop>INICIO</TitleDrop>
           </StyledLink>
@@ -85,17 +93,17 @@ export default function Layout() {
         </Footer>
         <FooterDesk>
 
-          <TitleFooter>
+          <TitleFooter as="h2">
             Intervenimos en todo el mundo. ¿Hablamos de tu proyecto?
           </TitleFooter>
           <FooterInfo>
             <FooterColumns>
               <ul>
                 <li>
-                  <PhoneLogo /> 678574652 / 662543947
+                  <PhoneLogo /> <a href="tel:+34678574652">678 574 652</a> / <a href="tel:+34662543947">662 543 947</a>
                 </li>
                 <li>
-                  <MailLogo /> grinoxindustrial@gmail.com
+                  <MailLogo /> <a href="mailto:grinoxindustrial@gmail.com">grinoxindustrial@gmail.com</a>
                 </li>
                 <li>
                   <UbiLogo /> Polígono la Fuenblanquilla, parcela 5-3-1
@@ -105,15 +113,19 @@ export default function Layout() {
               </ul>
             </FooterColumns>
 
-            <FooterCert href="/iso">
-              <img src="img/Logos/ISO.png" alt="rea" />
-              <CertInfo>Certificado ISO</CertInfo>
-            </FooterCert>
-
-            <FooterCert href="/rea">
-              <img src="img/Logos/ReaIcon.png" alt="rea" />
-              <CertInfo>Certificado REA</CertInfo>
-            </FooterCert>
+            <FooterCredentials aria-labelledby="footer-certificates-title">
+              <h3 id="footer-certificates-title">Documentación y certificados</h3>
+              <FooterCert to="/iso" aria-label="Consultar certificado ISO">
+                <span className="cert-acronym">ISO</span>
+                <span className="cert-description"><span>Certificado ISO</span><small><FiFileText aria-hidden="true" /> Consultar documento</small></span>
+                <FiArrowUpRight className="cert-arrow" aria-hidden="true" />
+              </FooterCert>
+              <FooterCert to="/rea" aria-label="Consultar certificado REA">
+                <span className="cert-acronym">REA</span>
+                <span className="cert-description"><span>Certificado REA</span><small><FiFileText aria-hidden="true" /> Consultar documento</small></span>
+                <FiArrowUpRight className="cert-arrow" aria-hidden="true" />
+              </FooterCert>
+            </FooterCredentials>
           </FooterInfo>
         </FooterDesk>
       </Layaout>
@@ -132,8 +144,7 @@ const Navbar = styled.div`
   padding-left: 4%;
   padding-right: 5%;
   @media screen and (min-width: 723px) {
-    padding-top: 1%;
-    padding-bottom: 1%;
+    display: none;
   }
 `;
 const SecondNav = styled.div`
@@ -247,26 +258,51 @@ const FooterColumns = styled.div`
     }
   }
 `;
-const FooterCert = styled.a`
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 8px;
-  max-width: 15%;
-  height: 10%;
-  z-index: 1;
-  cursor: pointer;
-  text-decoration: none;
-  &:visited {
-    color: inherit;
+const FooterCredentials = styled.section`
+  width: 365px;
+  max-width: 100%;
+  flex-shrink: 0;
+  h3 {
+    color: #a9bfce;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 950px) {
+    width: 100%;
+    margin-top: 8px;
   }
 `;
-const CertInfo = styled.p`
-  color: #447aab;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.3rem;
-  padding-bottom: 5%;
+const FooterCert = styled(Link)`
+  display: grid;
+  grid-template-columns: 55px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 18px;
+  padding: 17px 0;
+  border-top: 1px solid #ffffff26;
+  color: #edf3f7;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+  .cert-acronym {
+    display: grid;
+    place-items: center;
+    height: 45px;
+    border: 1px solid #ffffff35;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .06em;
+  }
+  .cert-description { display: grid; gap: 5px; font-size: 13px; }
+  small { display: flex; align-items: center; gap: 6px; color: #a9bfce; font-size: 10px; }
+  small svg { width: 12px; height: 12px; }
+  .cert-arrow { color: #8fc7eb; width: 18px; height: 18px; }
+  &:hover { color: #8fc7eb; border-color: #8fc7eb; }
+  &:hover .cert-acronym { border-color: #8fc7eb; }
+  &:focus-visible { outline: 2px solid #8fc7eb; outline-offset: 5px; }
+  @media (prefers-reduced-motion: reduce) { transition: none; }
 `;
 const ContainerPhone = styled.div`
   display: flex;
@@ -349,11 +385,18 @@ const FooterDesk = styled.div`
   display: none;
   @media screen and (min-width: 723px) {
     display: block;
-    background-image: url("img/Backgrounds/olivo.png");
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 2%;
-
+    background: #142b3c;
+    padding: 50px 6%;
+    ${TitleFooter} { font-size: 23px; font-weight: 500; text-align: left; padding: 0; margin: 0 auto 30px; max-width: 1240px; }
+    ${FooterInfo} { max-width: 1240px; margin: auto; justify-content: space-between; gap: 48px; align-items: flex-start; }
+    ${FooterColumns} { background: transparent; color: #d3dfe7; padding: 0; flex: 1; }
+    ${FooterColumns} ul li { margin-left: 0; font-size: 12px; line-height: 1.8; gap: 10px; flex-wrap: wrap; }
+    ${FooterColumns} a { color: inherit; text-decoration: none; }
+    ${FooterColumns} a:hover { text-decoration: underline; }
+    ${FooterColumns} svg { flex-shrink: 0; margin-bottom: 0; }
+  }
+  @media (min-width: 723px) and (max-width: 950px) {
+    ${FooterInfo} { flex-direction: column; gap: 25px; }
   }
 `;
 

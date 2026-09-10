@@ -21,4 +21,5 @@ export function initFadeObserver() {
   document
     .querySelectorAll("[data-fade], [data-fade-left], [data-fade-right]")
     .forEach((el) => observer.observe(el));
+  return () => observer.disconnect();
 }

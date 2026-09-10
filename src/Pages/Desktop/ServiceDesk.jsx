@@ -1,247 +1,64 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FiArrowRight, FiArrowUpRight, FiLayers, FiSettings, FiTool } from "react-icons/fi";
 import maquinas from "../../jsonCards.json";
 import products from "../../product.json";
-export default function ServiceDesk() {
-  return (
-    <ContainerServiceDesk>
-      <ContainerIcons>
-        <ContainerLogo>
-          <IconService src="img/Logos/GearLogo.png" />
-          <IconTitle>FABRICACIÓN</IconTitle>
-        </ContainerLogo>
-        <ContainerRow>
-          <img src="img/Logos/ArrowL.png" />
-          <img src="img/Logos/Gear.png" />
-          <img src="img/Logos/ArrowR.png" />
-        </ContainerRow>
-        <ContainerLogo>
-          <IconService src="img/Logos/Wrench.png" />
-          <IconTitle>INSTALACIÓN</IconTitle>
-        </ContainerLogo>
-        <ContainerRow>
-          <img src="img/Logos/ArrowL.png" />
-          <img src="img/Logos/Gear.png" />
-          <img src="img/Logos/ArrowR.png" />
-        </ContainerRow>
-        <ContainerLogo>
-          <IconService src="img/Logos/Screw.png" />
-          <IconTitle>MANTENIMIENTO</IconTitle>
-        </ContainerLogo>
-      </ContainerIcons>
-      <TitleF>NUESTRAS FABRICACIONES</TitleF>
-      <Fabricacion>
-        {products.map((req) => {
-          return(
-          <CardWrapper key={req.id}>
-          <ContainerProduct>
-            <TitleInside>{req.name}</TitleInside>
+import "./ServiceDesk.css";
 
-            <ProductImage src={req.imagen} alt="GR-200" />
+const fabricationCopy = {
+  1: { title: "Carro para transporte de sustancias químicas", text: "Un carro diseñado para facilitar el transporte y la manipulación de los productos químicos utilizados en la instalación." },
+  2: { title: "Equipo de limpieza GR-200", text: "Limpieza profesional de depósitos con un equipo fabricado para adaptarse a sus dimensiones y a las necesidades de cada cliente." },
+  3: { title: "Equipo de centrífugas", text: "Cuéntanos las necesidades de tu instalación y consulta con nuestro equipo las características y opciones disponibles." },
+};
 
-            <Overlay />
-
-            <ProductContent>
-              <InfoProduct>
-                {req.data}
-              </InfoProduct>
-            </ProductContent>
-          </ContainerProduct>
-        </CardWrapper>
-        )})}
-        
-        
-      </Fabricacion>
-      <TitleF>MAQUINARIA</TitleF>
-      <Products>
-        {maquinas.map((maq) => (
-          <CardWrapper key={maq.id}>
-            <ContainerProduct>
-              <TitleInside>{maq.name}</TitleInside>
-
-              <ProductImage src={maq.imagen} />
-
-              <Overlay />
-
-              <ProductContent>
-                <InfoProduct>{maq.info}</InfoProduct>
-              </ProductContent>
-            </ContainerProduct>
-          </CardWrapper>
-        ))}
-      </Products>
-    </ContainerServiceDesk>
-  );
+function sentenceCase(text) {
+  return text.charAt(0) + text.slice(1).toLocaleLowerCase("es");
 }
 
-const ContainerServiceDesk = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background-image: url("/img/Backgrounds/fondoGear.png");
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  z-index: 0;
-  padding-bottom: 5%;
-  @media screen and (max-width: 723px) {
-    display: none;
-  }
-`;
-const ContainerIcons = styled.div.attrs(() => ({
-  "data-fade": true,
-}))`
-  display: flex;
-  justify-content: center;
-  padding-top: 8%;
-`;
-const IconService = styled.img`
-  width: 12rem;
-  height: auto;
-`;
-const IconTitle = styled.h1`
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-align: center;
-`;
+export default function ServiceDesk() {
+  return (
+    <main className="desktop-services">
+      <section className="services-hero" aria-labelledby="services-title">
+        <div className="services-container services-hero-grid">
+          <div className="services-hero-copy">
+            <nav className="services-breadcrumb" aria-label="Ruta de navegación"><Link to="/">Inicio</Link><span aria-hidden="true">/</span><span aria-current="page">Servicios</span></nav>
+            <p className="services-eyebrow">SOLUCIONES GRINOX</p>
+            <h1 id="services-title">Cada instalación.<br />Una solución <em>a medida.</em></h1>
+            <p className="services-lead">Fabricamos, instalamos y mantenemos los equipos que hacen avanzar tu industria. Desde una pieza en inoxidable hasta el conjunto de tu almazara.</p>
+            <div className="services-actions"><Link className="services-button" to="/contacto">Cuéntanos tu proyecto <FiArrowUpRight aria-hidden="true" /></Link><a className="services-link" href="#fabricacion">Ver nuestras fabricaciones <FiArrowRight aria-hidden="true" /></a></div>
+          </div>
+          <figure className="services-hero-image"><img src="/img/Photos/work4.jpg" alt="Soldadura de una conducción de acero inoxidable en el taller de la instalación" fetchPriority="high" /><figcaption><span>EL VALOR ESTÁ EN LOS DETALLES</span>Acero inoxidable. Oficio. Precisión.</figcaption></figure>
+        </div>
+      </section>
 
-const ContainerLogo = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 3%;
-`;
-const ContainerRow = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Fabricacion = styled.div`
-  padding-top: 2%;
-  display: flex;
-  justify-content: center;
-  gap: 2%;
-`;
-const TitleF = styled.h1.attrs(() => ({
-  "data-fade-left": true,
-}))`
-  background-color: #ffffff;
-  color: #447aab;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 1.5rem;
-  padding: 1% 3%;
-  margin: 8% 30%;
-  margin-bottom: 4%;
-  text-align: center;
-`;
+      <section className="services-container services-section" aria-labelledby="services-overview-title">
+        <div className="services-heading"><div><p className="services-eyebrow">01 / UN SERVICIO INTEGRAL</p><h2 id="services-overview-title">Contigo en cada parte del proceso.</h2></div><p>Un equipo cercano para conectar<br />las necesidades de tu instalación.</p></div>
+        <div className="services-overview">
+          <a className="services-overview-card" href="#fabricacion"><div className="services-card-top"><FiLayers aria-hidden="true" /><span>01</span></div><h3>Fabricación</h3><p>Equipos y soluciones en acero inoxidable adaptados a tu forma de trabajar.</p><span className="services-card-action">Explorar fabricaciones <FiArrowRight aria-hidden="true" /></span></a>
+          <Link className="services-overview-card" to="/montaje"><div className="services-card-top"><FiSettings aria-hidden="true" /><span>02</span></div><h3>Instalación y montaje</h3><p>Maquinaria, tuberías y conexionado para integrar cada elemento de tu planta.</p><span className="services-card-action">Conocer el montaje <FiArrowUpRight aria-hidden="true" /></span></Link>
+          <Link className="services-overview-card" to="/mantenimiento"><div className="services-card-top"><FiTool aria-hidden="true" /><span>03</span></div><h3>Mantenimiento</h3><p>Atención a tus equipos e instalaciones para acompañarte campaña tras campaña.</p><span className="services-card-action">Ver mantenimiento <FiArrowUpRight aria-hidden="true" /></span></Link>
+        </div>
+      </section>
 
-const CardWrapper = styled.div`
-  width: 380px;
-`;
+      <section className="services-fabrication services-section" id="fabricacion" aria-labelledby="fabrication-title">
+        <div className="services-container">
+          <div className="services-heading"><div><p className="services-eyebrow">02 / NUESTRAS FABRICACIONES</p><h2 id="fabrication-title">Del taller a tu instalación.</h2></div><p>Equipos propios para resolver<br />necesidades concretas de tu día a día.</p></div>
+          <div className="services-product-grid">{products.map((product) => {
+            const copy = fabricationCopy[product.id] ?? { title: sentenceCase(product.name), text: product.data };
+            return <article className="services-product" key={product.id}>
+              <div className="services-product-image"><span>FABRICACIÓN GRINOX</span><img src={product.imagen} alt={copy.title} loading="lazy" /></div>
+              <div className="services-product-copy"><h3>{copy.title}</h3><p>{copy.text}</p><Link className="services-card-action" to="/contacto" aria-label={`Consultar sobre ${copy.title}`}>Consultar este equipo <FiArrowUpRight aria-hidden="true" /></Link></div>
+            </article>;
+          })}</div>
+        </div>
+      </section>
 
-const ContainerProduct = styled.div`
-  width: 100%;
-  height: 450px;
-  background: linear-gradient(
-    135deg,
-    #d9edff 0%,
-    #eef7ff 100%
-  ); /* 🔹 Elegante y muy suave */
+      <section className="services-container services-section" id="maquinaria" aria-labelledby="machinery-title">
+        <div className="services-heading"><div><p className="services-eyebrow">03 / MAQUINARIA PARA ALMAZARAS</p><h2 id="machinery-title">Cada equipo tiene su lugar.</h2></div><p>Hablemos de la maquinaria que necesitas<br />y de cómo integrarla en tu instalación.</p></div>
+        <div className="services-machinery-grid">{maquinas.map((machine) => <article className="services-machine" key={machine.id}><div className="services-machine-image"><img src={machine.imagen} alt={sentenceCase(machine.name)} loading="lazy" /></div><div className="services-machine-copy"><span className="services-eyebrow">MAQUINARIA INDUSTRIAL</span><h3>{sentenceCase(machine.name)}</h3><Link className="services-link" to="/contacto" aria-label={`Solicitar información sobre ${sentenceCase(machine.name)}`}>Solicitar información <FiArrowUpRight aria-hidden="true" /></Link></div></article>)}</div>
+        <aside className="services-advice"><FiTool aria-hidden="true" /><p><strong>¿Tu instalación necesita algo diferente?</strong> Cuéntanos qué equipo o solución buscas. Estudiamos las necesidades de cada proyecto de forma individual.</p><Link className="services-link" to="/contacto">Hablemos <FiArrowUpRight aria-hidden="true" /></Link></aside>
+      </section>
 
-  border-radius: 18px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  margin-bottom: 8%;
-  &:hover {
-    transform: scale(1.035);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
-  }
-`;
-
-const TitleInside = styled.h3`
-  position: absolute;
-  top: 14px;
-  left: 18px;
-  z-index: 5;
-  max-width: 90%;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  padding: 6px 12px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(3px);
-  border-radius: 8px;
-
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-`;
-
-const ProductImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  transition: transform 0.8s ease;
-
-  ${ContainerProduct}:hover & {
-    /* Zoom hacia la esquina superior derecha */
-    transform: scale(1.28) translate(12%, -12%);
-  }
-`;
-
-const Overlay = styled.div`
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.2),
-    transparent
+      <section className="services-contact" aria-labelledby="services-contact-title"><div className="services-container services-contact-inner"><div><p className="services-eyebrow">EMPECEMOS POR LO QUE NECESITAS</p><h2 id="services-contact-title">Tu próximo proyecto empieza<br />con una conversación.</h2><p>Estamos en Bujalance, Córdoba. Trabajamos contigo donde nos necesites.</p></div><Link className="services-button" to="/contacto">Contacta con Grinox <FiArrowUpRight aria-hidden="true" /></Link></div></section>
+    </main>
   );
-  opacity: 0;
-
-  transition: opacity 0.5s ease;
-
-  ${ContainerProduct}:hover & {
-    opacity: 1;
-  }
-`;
-
-const ProductContent = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 1.8rem;
-
-  opacity: 0;
-  transform: translateY(25px);
-  transition: 0.5s ease;
-
-  ${ContainerProduct}:hover & {
-    opacity: 1;
-    transform: translateY(0);
-    backdrop-filter: blur(8px);
-    background: rgba(0, 0, 0, 0.35);
-  }
-`;
-
-const InfoProduct = styled.p`
-  font-size: 0.95rem;
-  color: #ffffff;
-  line-height: 1.45;
-  font-weight: 300;
-`;
-const Products = styled.div`
-  padding-top: 2%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2%;
-`;
+}
